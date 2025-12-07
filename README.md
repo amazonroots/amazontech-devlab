@@ -1,4 +1,17 @@
-🚀 AmazonTech DevLab
+<p align="center">
+  <img src="https://img.shields.io/badge/AMAZONTECH-DEVLAB-8A2BE2?style=for-the-badge&logo=amazonaws&logoColor=white" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12-8A2BE2?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/FastAPI-🚀-ff00ff?style=for-the-badge&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-Ready-00e5ff?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-15-00e5ff?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/JWT-Auth-ff00ff?style=for-the-badge&logo=jsonwebtokens&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-Dev_Active-8A2BE2?style=for-the-badge" />
+</p>
+
+--- AmazonTech DevLab
 
 Backend profissional com FastAPI + Docker + PostgreSQL + JWT + Auditoria + Admin Panel
 
