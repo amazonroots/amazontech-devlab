@@ -1,0 +1,24 @@
+# Não copiar ambiente local, cache, editor, etc.
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.Python
+.venv
+venv/
+env/
+.idea/
+.vscode/
+.DS_Store
+
+# Git e afins
+.git
+.gitignore
+
+# Arquivo de ambiente local (não vai dentro da imagem)
+.env
+
+# Logs
+logs/
+*.log

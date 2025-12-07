@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    container_name: amazontech_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: amazontech_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: amazontech_api
+    working_dir: /app
+    environment:
+      DATABASE_URL: postgresql+psycopg2://postgres:postgres@db:5432/amazontech_db
+      SECRET_KEY: amazontech-devlab-super-secret-LOCAL
+      ACCESS_TOKEN_EXPIRE_MINUTES: 60
+    depends_on:
+      - db
+    ports:
+      - "8005:8000"
+
+volumes:
+  postgres_data:
