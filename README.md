@@ -1,212 +1,169 @@
+📄 README.md — AmazonTech DevLab — Night City Edition
+
+⚡ Backend profissional, autenticado, com auditoria e pronto para AWS. Energia neon, arquitetura limpa, documentação de respeito.
+
+⸻
+
+
 <div align="center">
 
-# ⚡ AMAZONTECH DEVLAB  
-**FastAPI • Docker • PostgreSQL • JWT • Auditoria • Admin • DevOps-Ready**
 
-### 🟣 Backend profissional em containers  
-### 🟦 Documentado para portfólio. Construído para nuvem.  
-  
-<br>
+🔥 AMAZONTECH DE VLAB — BACKEND FASTAPI + DOCKER + POSTGRES + JWT + AUDITORIA
 
-> *Visão neon: arquitetura limpa, interface técnica e estética futurista.*  
-> *Sem firula. Sem gerador automático. Projeto real construído na prática.*
+<img src="https://img.shields.io/badge/Python-3.12-8A2BE2?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/FastAPI-⚡-f000ff?style=for-the-badge&logo=fastapi&logoColor=white"/>
+<img src="https://img.shields.io/badge/Docker-READY-00e5ff?style=for-the-badge&logo=docker&logoColor=white"/>
+<img src="https://img.shields.io/badge/PostgreSQL-15-00c8ff?style=for-the-badge&logo=postgresql&logoColor=white"/>
+<img src="https://img.shields.io/badge/JWT-AUTH-ff00aa?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
+<img src="https://img.shields.io/badge/API_STATUS-ACTIVE-8A2BE2?style=for-the-badge"/>
 
-<br>
-
-<img src="https://i.imgur.com/XvmYfDP.png" width="800"/>
 
 </div>
 
----
 
-## 📌 VISÃO GERAL
 
-O **AmazonTech DevLab** é um backend moderno desenvolvido em **FastAPI**, com **autenticação JWT**, **PostgreSQL em Docker**, **módulo de notas com controle de usuário**, **trilha de auditoria persistente**, **painel admin**, e arquitetura preparada para **Cloud (AWS)**.
+⸻
 
-Criado como **laboratório real de Cloud/DevOps**, documentando toda evolução técnica sem esconder erros, ajustes e correções.  
-Código limpo, modular e escalável.
+VISÃO GERAL
 
----
+Backend completo rodando em FastAPI com:
 
-## 🧭 SUMÁRIO
+✔ Autenticação JWT
+✔ Auditoria persistente (eventos registrados no banco)
+✔ Sistema de Notas vinculado ao usuário autenticado
+✔ Painel Admin (listar usuários / promover para admin)
+✔ Rodando totalmente em Docker
+✔ Banco PostgreSQL dentro do Compose
+✔ Pronto para deploy em AWS / EC2 / RDS
 
-- VISÃO GERAL  
-- LINHA DO TEMPO  
-- HISTÓRICO TÉCNICO  
-- ARQUITETURA  
-- EXECUÇÃO DOCKER  
-- MODELOS & SCHEMAS  
-- AUTENTICAÇÃO  
-- NOTAS  
-- AUDITORIA  
-- ADMIN  
-- ERROS REAIS SOLUCIONADOS  
-- STATUS ATUAL  
-- ROADMAP  
-- RODAR EM 30 SEGUNDOS  
+Swagger: http://localhost:8005/docs
+Healthcheck: http://localhost:8005/health
 
----
+⸻
 
-## 🕒 LINHA DO TEMPO
-
-| Data | Evento |
-|---|---|
-| **06/11/2025** | Ambiente pronto + estrutura inicial |
-| **07/11/2025** | Docker + banco + erro bcrypt solucionado |
-| **08/11/2025** | JWT + Notas + Auditoria |
-| **11/11/2025** | Backend consolidado |
-| **07/12/2025** | Documentação + ajustes finais API |
-
----
-
-## 🔥 HISTÓRICO TÉCNICO DE DESENVOLVIMENTO
-
-**DIA 1 — 06/11/2025**  
-Instalação do ambiente, limpeza, pastas antigas removidas.  
-Resultado: estrutura base pronta.
-
-**DIA 2 — 07/11/2025**  
-Erro no `/signup`: *"password cannot be longer than 72 bytes"*.  
-Ajuste: **bcrypt → pbkdf2_sha256 (passlib)**.  
-Resultado: autenticação segura e estável.
-
-**DIA 3 — 08/11/2025**  
-JWT finalizado, módulo de Notas implementado, logs iniciados.
-
-> **Registro real de um dev construindo, errando, corrigindo e evoluindo.**
-
----
-
-## 🏛 ARQUITETURA
+ESTRUTURA ATUAL DO PROJETO
 
 AmazonTechDevLab/
-├── main.py                → App principal
-├── auth.py                → Login/Signup/Me
-├── notes.py               → CRUD Notas
-├── admin_routes.py        → Admin Panel
-├── audit.py               → log_action()
-├── audit_routes.py        → Logs restritos admin
-├── security.py            → JWT + Hash
-├── models.py              → ORM Models
-├── schemas.py             → Pydantic
-├── db.py                  → Engine + Session
-├── docker-compose.yml     → API + PostgreSQL
-├── Dockerfile             → Build
-└── logs/                  → Auditoria Persistente
+├── auth.py             # signup/login/me + auth flow
+├── audit.py            # registro de logs
+├── audit_routes.py     # rotas de auditoria (admin-only)
+├── admin_routes.py     # rotas administrativas
+├── notes.py            # CRUD autenticado de notas
+├── models.py           # User, Note, AuditLog
+├── schemas.py          # Pydantic schemas
+├── security.py         # hash PBKDF2 + JWT
+├── db.py               # conexão e sessão com PostgreSQL
+├── docker-compose.yml  # API + DB
+├── Dockerfile
+├── requirements.txt
+├── start.sh
+└── logs/
 
-Arquitetura minimalista → fácil de escalar para **AWS EC2 + RDS + Nginx + CI/CD**.
 
----
+⸻
 
-## 🐳 EXECUÇÃO VIA DOCKER
+COMO SUBIR O AMBIENTE
 
-API roda no container porta `8000` → exposta em `8005`.
+Ambiente completo com API + PostgreSQL:
 
-```bash
+docker compose down -v --remove-orphans
 docker compose up --build
 
-Swagger aberto em:
+Acesso principal:
+
+http://localhost:8005
+
+Swagger:
 
 http://localhost:8005/docs
 
 
 ⸻
 
-🧬 MODELOS & SCHEMAS
-	•	User → email, senha hash, admin flag
-	•	Note → texto, dono
-	•	AuditLog → ação, data, user_id
+ENDPOINTS PRINCIPAIS
+
+🔐 Autenticação
+
+Método	Rota	Descrição
+POST	/signup	Cria usuário
+POST	/login	Gera token JWT
+GET	/me	Usuário autenticado
+
+🗒 Notas
+
+Método	Rota
+POST	/notes
+GET	/notes
+
+🧾 Auditoria
+
+| GET | /audit/logs (admin) |
+
+🧩 Admin
+
+| GET | /admin/users |
+| POST | /admin/promote/{id} |
 
 ⸻
 
-🔐 AUTENTICAÇÃO
-	•	Hash com pbkdf2_sha256
+MODELOS
+
+User → id • username • email • hashed_password • created_at • is_admin
+Note → texto vinculado ao usuário
+AuditLog → registra ações (signup/login/create_note etc.)
+
+⸻
+
+SEGURANÇA
+	•	Hash: PBKDF2-SHA256 (passlib)
 	•	JWT com expiração
-	•	Rotas protegidas por Bearer Token
+	•	Rotas protegidas via OAuth2PasswordBearer
 
-Fluxo:
-	1.	/signup
-	2.	/login → recebe token
-	3.	Authorize no Swagger
-	4.	acessar /notes
-
-⸻
-
-📓 NOTAS
-	•	GET /notes lista notas do usuário autenticado
-	•	POST /notes adiciona new note
-
-Simples, funcional e elegante.
-
-⸻
-
-📊 AUDITORIA
-
-log_action() registra:
-	•	login
-	•	logout
-	•	notas criadas
-	•	ações sensíveis
-
-Rota Admin: /audit/logs
-
-⸻
-
-🛡 ADMIN
-	•	Listar usuários
-	•	Promover user admin
-	•	Rotas protegidas
-
-Demonstra controle RBAC real.
-
-⸻
-
-🧯 ERROS REAIS SOLUCIONADOS
-
-Address already in use (48)
-→ Causa: serviços duplicados
-→ Solução: rebuild + uso exclusivo do Docker
-
-⸻
-
-🏆 STATUS ATUAL
-
-✔ Backend pronto
-✔ Docker estável
-✔ JWT seguro
-✔ Auditoria funcional
-✔ Código clean
-🚀 Próxima etapa: Deploy AWS EC2 Free Tier
-
-⸻
-
-🗺 ROADMAP
-	•	Deploy AWS (EC2)
-	•	Banco remoto (RDS)
-	•	HTTPS com Nginx
-	•	CI/CD GitHub Actions
-	•	IaC Terraform
-	•	Observabilidade + Logging
-
-⸻
-
-🚀 RODAR EM 30 SEGUNDOS
-
-git clone https://github.com/amazonroots/amazontech-devlab.git
-cd amazontech-devlab
-docker compose up --build
-http://localhost:8005/docs
+hash_password()
+verify_password()
+create_access_token()
 
 
 ⸻
 
+COMANDOS ÚTEIS
 
-<div align="center">
+docker compose up --build     # sobe tudo novo
+docker compose down           # parar
+docker exec -it amazontech_db psql -U postgres -d amazontech_db  # entrar no banco
+
+Promover usuário a admin:
+
+UPDATE users SET is_admin = true WHERE username = 'admin';
 
 
-⭐ Se gostou, deixe uma Star no repo
+⸻
 
-🔥 Projeto em evolução — DevSecCloud Journey
+EVOLUÇÃO FUTURA — ROAD TO CLOUD
 
-</div>
-```
+🟦 Deploy EC2 Free Tier
+🟦 Certbot + HTTPS
+🟦 RDS para DB gerenciado
+🟦 GitHub Actions CI/CD
+🟦 Terraform para IaC
+🟦 ArgoCD para GitOps
+
+⸻
+
+STATUS FINAL ATUAL
+
+🔥 API rodando estável
+🔐 JWT validado
+📜 Auditoria funcional
+🧩 Admin operante
+🐋 Docker pronto para cloud
+🚀 Projeto nível portfólio
+
+⸻
+
+Feito por
+
+Rafael Rodrigues — AmazonTech
+
+“Código é aço. Banco é cimento. Infra é guerra.”
+“Documentação é o neon que ilumina o beco onde só os fortes passam.”
