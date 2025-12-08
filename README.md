@@ -158,7 +158,3 @@ POST	/admin/promote/{id}	Tornar admin
 Rafael Rodrigues — AmazonTech
 
 “Código é aço. Infra é disciplina. Deploy é guerra bem planejada.”
-
-
-📍 Agora só cola no GitHub → Commit changes → manda print do preview pra conferirmos.
-Quando estiver pronto, seguimos pra deploy na AWS. 🔥
