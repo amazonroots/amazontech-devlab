@@ -427,3 +427,4 @@ Rafael Rodrigues (AmazonTech)
 	•	Backend / Cloud / DevOps em construção
 	•	Foco em infra profissional, segurança, auditoria e AI Safety
 	•	Projeto pensado como laboratório real de backend + cloud para portfólio, entrevistas e futuro deploy em produção.
+
