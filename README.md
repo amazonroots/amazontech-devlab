@@ -13,11 +13,6 @@
 
 <h1 align="center">🟣 AmazonTech DevLab/h1>
 
-<p align="center">
-Backend profissional com FastAPI + Docker + PostgreSQL + JWT + Auditoria + Admin Panel,
-pensado para rodar em cloud como se fosse uma API de Night City: resiliente, rastreável e pronta para upgrade.
-</p>
-
 ---
 
 ## 📌 Visão Geral
