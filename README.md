@@ -11,7 +11,12 @@
   <img src="https://img.shields.io/badge/STATUS-DEV_ACTIVE-8A2BE2?style=for-the-badge" />
 </p>
 
-<h1 align="center">🟣 AmazonTech DevLab
+<h1 align="center">🟣 AmazonTech DevLab</h1>
+
+<p align="center">
+Backend profissional com FastAPI + Docker + PostgreSQL + JWT + Auditoria + Admin Panel,
+pensado para rodar em cloud como se fosse uma API de Night City: resiliente, rastreável e pronta para upgrade.
+</p>
 
 ---
 
@@ -34,23 +39,24 @@ Toda a operação roda em containers Docker, com foco em:
 
 ## 🧭 Sumário
 
-1. [Linha do Tempo (Diário Técnico)](#-linha-do-tempo--diário-técnico)
-2. [Arquitetura Geral](#-arquitetura-geral)
-3. [Módulos da API](#-módulos-da-api)
-4. [Modelos & Schemas](#-modelos--schemas)
-5. [Segurança & JWT](#-segurança--jwt)
-6. [Auditoria](#-auditoria)
-7. [Admin Panel](#-admin-panel)
-8. [Docker & Execução Local](#-docker--execução-local)
-9. [Casos Reais de Erro Resolvidos](#-casos-reais-de-erro-resolvidos)
-10. [Status Atual do Projeto](#-status-atual-do-projeto)
-11. [Roadmap (Próximas Etapas)](#-roadmap-próximas-etapas)
-12. [Rodando em 30 segundos](#-rodando-em-30-segundos)
-13. [Plano de Deploy AWS](#-plano-de-deploy-aws-ec2)
-14. [Autor](#-autor)
+1. [Linha do Tempo (Diário Técnico)](#linha-do-tempo)  
+2. [Arquitetura Geral](#arquitetura-geral)  
+3. [Módulos da API](#modulos-da-api)  
+4. [Modelos & Schemas](#modelos-e-schemas)  
+5. [Segurança & JWT](#seguranca-jwt)  
+6. [Auditoria](#auditoria)  
+7. [Admin Panel](#admin-panel)  
+8. [Docker & Execução Local](#docker-execucao-local)  
+9. [Casos Reais de Erro Resolvidos](#erros-reais)  
+10. [Status Atual do Projeto](#status-atual-do-projeto)  
+11. [Roadmap (Próximas Etapas)](#roadmap-proximas-etapas)  
+12. [Rodando em 30 segundos](#rodando-em-30-segundos)  
+13. [Plano de Deploy AWS](#plano-deploy-aws-ec2)  
+14. [Autor](#autor)  
 
 ---
 
+<a id="linha-do-tempo"></a>
 ## 🕒 Linha do Tempo – Diário Técnico
 
 **Dia 1 — 06/11/2025**  
@@ -122,6 +128,7 @@ Toda a operação roda em containers Docker, com foco em:
 
 ---
 
+<a id="arquitetura-geral"></a>
 ## 🏛 Arquitetura Geral
 
 Estrutura de arquivos (visão “Night City Grid”):
@@ -156,38 +163,33 @@ Módulos centrais:
 
 ⸻
 
+
+
 🧩 Módulos da API
 
 🔐 Auth (auth.py)
-	•	POST /signup
-	•	Cria usuário com senha hasheada
-	•	POST /login
-	•	Valida credenciais
-	•	Retorna access_token (Bearer)
-	•	GET /me
-	•	Retorna dados do usuário autenticado
+	•	POST /signup — cria usuário com senha hasheada
+	•	POST /login — valida credenciais e retorna access_token (Bearer)
+	•	GET /me — retorna dados do usuário autenticado
 
 📓 Notes (notes.py)
-	•	GET /notes
-	•	Lista notas do usuário logado
-	•	POST /notes
-	•	Cria nota vinculada ao current_user
+	•	GET /notes — lista notas do usuário logado
+	•	POST /notes — cria nota vinculada ao current_user
 
 📊 Auditoria (audit_routes.py)
-	•	GET /audit/logs
-	•	Lista eventos de auditoria
-	•	Somente admin
+	•	GET /audit/logs — lista eventos de auditoria (somente admin)
 
 🛡 Admin (admin_routes.py)
-	•	GET /admin/users
-	•	Lista todos os usuários
-	•	POST /admin/promote/{user_id}
-	•	Promove usuário a admin
-	•	Ambas as rotas exigem:
+	•	GET /admin/users — lista todos os usuários
+	•	POST /admin/promote/{user_id} — promove usuário a admin
+
+Regras:
 	•	Usuário autenticado
-	•	is_admin = True
+	•	Para rotas admin/auditoria: is_admin = True
 
 ⸻
+
+
 
 🧬 Modelos & Schemas
 
@@ -216,36 +218,36 @@ models.AuditLog
 	•	user_id (opcional)
 	•	created_at
 
-Principais Schemas (schemas.py)
-	•	UserCreate
-	•	UserOut
-	•	LoginIn
-	•	Token
-	•	NoteCreate
-	•	NoteOut
-	•	NoteList
-	•	AuditLogOut
-	•	AuditLogList
+Schemas principais em schemas.py:
+	•	UserCreate, UserOut
+	•	LoginIn, Token
+	•	NoteCreate, NoteOut, NoteList
+	•	AuditLogOut, AuditLogList
 
 ⸻
+
+
 
 🔐 Segurança & JWT
 
 Implementada em security.py:
 	•	Hash de senha:
 	•	pbkdf2_sha256 via passlib.context.CryptContext
-	•	Funções principais:
+	•	Funções:
 	•	hash_password(plain_password)
 	•	verify_password(plain, hashed)
 	•	create_access_token(data: dict)
 	•	decode_token(token: str)
-	•	Integração com FastAPI:
+
+Integração com FastAPI:
 	•	OAuth2PasswordBearer(tokenUrl="/login")
-	•	get_current_user() → usado como dependency nas rotas protegidas
+	•	get_current_user() usado como dependency nas rotas protegidas
 
 Resultado: fluxo de autenticação robusto, sem o limite de 72 bytes do bcrypt.
 
 ⸻
+
+
 
 📊 Auditoria
 
@@ -258,34 +260,38 @@ Eventos típicos registrados:
 	•	login_success
 	•	login_failed
 	•	note_created
-	•	Demais eventos sensíveis que forem surgindo
+	•	Outros eventos sensíveis
 
-Consulta dos logs:
-	•	Endpoint: GET /audit/logs
-	•	Restrições:
+Consulta:
+	•	GET /audit/logs
+	•	Apenas para:
 	•	Usuário autenticado
 	•	is_admin = True
-	•	Ordenação:
 	•	Logs do mais recente para o mais antigo
 
 ⸻
 
+
+
 🛡 Admin Panel
 
-Tudo sob o namespace /admin:
+Namespace /admin:
 	•	GET /admin/users
 	•	Lista todos os usuários
 	•	POST /admin/promote/{user_id}
 	•	Promove usuário a admin
-	•	Segurança:
+
+Segurança:
 	•	JWT obrigatório
-	•	is_admin = True validado em dependency específica (require_admin())
+	•	is_admin = True validado em require_admin()
 
 ⸻
 
+
+
 🐳 Docker & Execução Local
 
-Dockerfile (visão conceitual)
+Dockerfile (conceito)
 	•	Base: python:3.12-slim
 	•	Passos:
 	1.	Copiar requirements.txt
@@ -295,32 +301,23 @@ Dockerfile (visão conceitual)
 	5.	Comando:
 	•	uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
-docker-compose.yml
-
-Serviços:
-	•	db
+docker-compose.yml (resumo)
+	•	Serviço db:
 	•	image: postgres:15
 	•	container_name: amazontech_db
-	•	environment:
-	•	POSTGRES_USER=postgres
-	•	POSTGRES_PASSWORD=postgres
-	•	POSTGRES_DB=amazontech_db
-	•	ports: "5432:5432"
-	•	volumes: postgres_data:/var/lib/postgresql/data
-	•	api
+	•	Porta 5432:5432
+	•	Volume postgres_data:/var/lib/postgresql/data
+	•	Serviço api:
 	•	build: .
 	•	container_name: amazontech_api
-	•	command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-	•	volumes: .:/app
-	•	depends_on: db
-	•	environment:
+	•	Comando: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+	•	Porta 8005:8000 → host 8005, container 8000
+	•	Depende de db
 	•	DATABASE_URL=postgresql+psycopg2://postgres:postgres@db:5432/amazontech_db
-	•	ports: "8005:8000" → host 8005, container 8000
-
-Volumes:
-	•	postgres_data
 
 ⸻
+
+
 
 🧯 Casos Reais de Erro Resolvidos
 
@@ -329,12 +326,19 @@ Erro 48 – OSError: [Errno 48] Address already in use
 	•	Container amazontech_api já ocupando a porta
 	•	Tentativa de rodar uvicorn localmente fora do Docker
 	•	Solução:
-	•	docker compose down -v --remove-orphans
-	•	Padronização: sempre rodar pelo Docker, nunca uvicorn solto
+
+docker compose down -v --remove-orphans
+docker compose up --build
+
 	•	Resultado:
-	•	curl http://localhost:8005/health → { "status": "ok" }
+
+curl http://localhost:8005/health
+# { "status": "ok" }
+
 
 ⸻
+
+
 
 🔥 Status Atual do Projeto
 	•	✅ Autenticação com JWT estável
@@ -349,6 +353,8 @@ Erro 48 – OSError: [Errno 48] Address already in use
 	•	Futuro deploy em AWS
 
 ⸻
+
+
 
 🛣 Roadmap – Próximas Etapas
 
@@ -366,9 +372,11 @@ Longo prazo
 	•	IaC com Terraform
 	•	Orquestração com EKS
 	•	GitOps com ArgoCD
-	•	Camada de AI Safety / Sentinel (futuro “firewall cognitivo”)
+	•	Camada avançada de segurança / Sentinel (futuro “firewall cognitivo”)
 
 ⸻
+
+
 
 ⚙ Rodando em 30 segundos
 
@@ -397,6 +405,8 @@ Fluxo sugerido de teste:
 
 ⸻
 
+
+
 ☁ Plano de Deploy AWS EC2
 
 Visão geral
@@ -413,18 +423,23 @@ Passos principais:
 	•	8005 (HTTP) – acesso público (ou via ALB no futuro)
 	6.	Instalar Docker + Docker Compose na EC2
 	7.	Clonar repositório:
-	•	git clone https://github.com/amazonroots/amazontech-devlab.git
+
+git clone https://github.com/amazonroots/amazontech-devlab.git
+
 	8.	Rodar:
-	•	docker compose up --build -d
+
+docker compose up --build -d
+
 	9.	Testar:
 	•	http://SEU_IP_EC2:8005/docs
 
 ⸻
 
+
+
 👤 Autor
 
 Rafael Rodrigues (AmazonTech)
 	•	Backend / Cloud / DevOps em construção
-	•	Foco em infra profissional, segurança, auditoria e AI Safety
+	•	Foco em infra profissional, segurança, auditoria e cloud
 	•	Projeto pensado como laboratório real de backend + cloud para portfólio, entrevistas e futuro deploy em produção.
-
