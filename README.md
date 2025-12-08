@@ -1,5 +1,3 @@
-🚀 README.md Profissional — AmazonTech DevLab
-
 <p align="center">
   <img src="https://img.shields.io/badge/AMAZONTECH%20DEVLAB-8A2BE2?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AmazonTech DevLab Logo"/>
 </p>
