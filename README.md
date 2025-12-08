@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/STATUS-DEV_ACTIVE-8A2BE2?style=for-the-badge" />
 </p>
 
-<h1 align="center">🟣 AmazonTech DevLab/h1>
+<h1 align="center">🟣 AmazonTech DevLab
 
 ---
 
