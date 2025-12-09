@@ -1,108 +1,136 @@
 
 # ☁ AmazonTech DevLab  
-**Backend em produção com deploy real em Cloud AWS EC2 • FastAPI • Docker • PostgreSQL • JWT • Nginx**
+**Backend completo rodando em produção real na AWS EC2 • FastAPI • Docker • PostgreSQL • JWT • Nginx**
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Online-success?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Cloud-AWS-orange?style=for-the-badge&logo=amazonaws"/>
-  <img src="https://img.shields.io/badge/Backend-FastAPI-0affc2?style=for-the-badge&logo=fastapi"/>
-  <img src="https://img.shields.io/badge/Infra-Docker-blue?style=for-the-badge&logo=docker"/>
-  <img src="https://img.shields.io/badge/DB-PostgreSQL-0277bd?style=for-the-badge&logo=postgresql"/>
-  <img src="https://img.shields.io/badge/Auth-JWT-critical?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge&logo=amazonaws"/>
+  <img src="https://img.shields.io/badge/FastAPI-Backend-00ffc8?style=for-the-badge&logo=fastapi"/>
+  <img src="https://img.shields.io/badge/Docker-Container-blue?style=for-the-badge&logo=docker"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-Database-0277bd?style=for-the-badge&logo=postgresql"/>
+  <img src="https://img.shields.io/badge/JWT-Auth-critical?style=for-the-badge"/>
 </p>
 
-🔗 **API em Produção (Swagger):**  
+🔗 **Swagger público:**  
 http://100.26.73.245:8005/docs
 
-> Projeto desenvolvido com foco em Cloud Deployment e Infra real — **não é local, não é demo.**
+> Não é localhost. Não é mock. **É produção real rodando 24/7 via Cloud AWS.**
 
 ---
 
-## 📌 Objetivo
-Criar um backend completo e subir para **produção na AWS**, simulando ambiente real de empresa com:
+## 🧭 O que é este projeto?
 
-- Provisionamento de servidor EC2
-- Configuração de segurança e rede (Security Groups)
-- Elastic IP (IP fixo)
-- Deploy com Docker Compose
-- Proxy reverso com Nginx porta 80
-- Banco persistente PostgreSQL
+O **AmazonTech DevLab** é meu laboratório pessoal de **Cloud + Backend + DevOps**, criado com um objetivo claro:
 
-Este repositório existe para demonstrar **Cloud Skills + Deploy real**, não apenas código.
+> **Aprender Cloud na prática e provar que sou capaz de construir, configurar e publicar uma aplicação completa sozinho.**
+
+Eu não tinha um projeto pronto para subir — então eu criei um.  
+Desenvolvi o backend, implementei autenticação, contêinerizei a aplicação, preparei o banco e subi para a nuvem.
+
+Este repositório documenta não apenas o código, mas **a jornada técnica**.
 
 ---
 
-## ⚙ Tecnologias
+## 🧩 Por que ele existe
 
-| Camada | Ferramentas |
+- Para **praticar arquitetura real**, não apenas teoria  
+- Para **subir um serviço completo para a AWS** com infraestrutura própria  
+- Para aprender **segurança, rede, deploy, logs, escalabilidade e automação**  
+- Para construir a base de projetos futuros (como o *Sentinel-21*)  
+- Para ter **um case sólido de Cloud/DevOps** no meu portfólio  
+
+Feito **100% solo**, do zero, sem tutorial mastigado, com erro, tentativa, solução e deploy final.
+
+> **Projeto raiz do meu ecossistema AmazonTech.  
+O primeiro tijolo da minha carreira Cloud.**
+
+---
+
+## ⚙ Stack Técnica
+
+| Camada | Tecnologias |
 |---|---|
 | Linguagem | Python 3.11 |
 | Framework | FastAPI |
 | Banco | PostgreSQL (volume persistente) |
-| Contêiner | Docker + Docker Compose |
-| Cloud | AWS EC2 (Ubuntu 24.04, Elastic IP) |
-| Rede | Security Groups, Porta 80/8005 liberadas |
-| Proxy | Nginx Reverse Proxy |
-| Auth | JWT Tokens |
+| Containers | Docker + Docker Compose |
+| Cloud | AWS EC2 (Ubuntu 24.04) |
+| Rede | Security Groups + Elastic IP |
+| Proxy | Nginx Reverse Proxy porta 80 |
+| Autenticação | JWT Tokens |
+| Observação | Acesso global em produção |
 
 ---
 
-## 💻 Como rodar localmente
+## 🛠 Como rodar localmente
 
 ```bash
 git clone https://github.com/amazonroots/amazontech-devlab.git
 cd amazontech-devlab
 docker-compose up -d
 
-Docs local:
-http://localhost:8005/docs
-
-Requisitos: Docker + Docker Compose
+📄 Docs: http://localhost:8005/docs
+⚙ Requisitos: Docker + Docker Compose
 
 ⸻
 
-☁ Deploy na AWS
+☁ Deploy em Cloud AWS
+
+Estruturado como produção real — servidor, rede, infraestrutura e acesso global.
 
 Componente	Status
-AWS EC2 Ubuntu 24.04	🟢 Online
+AWS EC2 (Ubuntu 24.04)	🟢 Online
 Elastic IP (fixo)	🟢 Configurado
-Docker Compose	🟢 API + DB rodando
-PostgreSQL Persistente	🟢
-Nginx porta 80	🟢 Reverse proxy ativo
-Endpoint Público	🟢 Acessível no mundo
-SSL/Domain	🔜 Prox. etapa
-CI/CD	🔜 Planejado
+Docker Compose (API + DB)	🟢 Rodando
+PostgreSQL Persistente	🟢 Ativo
+Nginx Reverse Proxy (80)	🟢 Funcionando
+Endpoint Público	🟢 Acessível mundialmente
+SSL + Domínio	🔜 Próxima etapa
+CI/CD GitHub Actions	📌 Planejado
 
 
 ⸻
 
-📊 Progresso do Projeto (clean + profissional)
+📊 Evolução do Projeto
 
-[██████████████] 100% Backend + CRUD Notes
-[██████████████] 100% JWT Auth + Rotas privadas
-[██████████████] 100% Docker + PostgreSQL persistente
-[██████████████] 100% Deploy AWS EC2 + API Live
-[██████████████] 100% Nginx Reverse Proxy + Porta 80
-[██████░░░░░░░░] 60% SSL + Domínio custom
-[██░░░░░░░░░░░░] 20% CI/CD • Observabilidade • RDS
+[██████████████] Backend + CRUD Notes
+[██████████████] JWT Auth
+[██████████████] Docker + PostgreSQL Persistente
+[██████████████] Deploy AWS EC2
+[██████████████] Nginx Proxy + Porta 80
+[██████░░░░░░░░] Domínio + HTTPS (em andamento)
+[██░░░░░░░░░░░░] CI/CD + Observabilidade (planejado)
 
-
-⸻
-
-🧭 Roadmap
-	•	🔐 Domínio + HTTPS (Certbot)
-	•	🚀 CI/CD GitHub Actions
-	•	📊 Logging + Monitoramento
-	•	🐘 DB → RDS
-	•	📦 Escalonamento → ECS/EKS
 
 ⸻
 
-👤 Autor — Responsável pela Infra & Deploy
+🔮 Próximos passos (roadmap)
+	•	Domínio próprio + Certbot (HTTPS)
+	•	Pipeline CI/CD com GitHub Actions
+	•	Logs + Monitoramento (Grafana/Prometheus/Loki)
+	•	Banco migrado para Amazon RDS
+	•	Escalonamento com ECS/EKS
+	•	Documentação técnica detalhada da arquitetura
 
-Rafael Rodrigues  
+⸻
+
+🌌 Visão e Continuidade
+
+Este é apenas o primeiro projeto do meu ciclo DevOps/Cloud.
+
+O próximo será o Sentinel-21 — Segurança e Firewall Cognitivo para IA.
+Depois virão microserviços, mensageria, filas, RDS, observabilidade, automação.
+
+Cada repositório terá sua própria história.
+Este aqui é onde tudo começou.
+
+⸻
+
+👤 Autor
+
+Rafael Rodrigues – AmazonTech  
 Backend • Cloud • DevOps  
 Email: rafael.amazontech@gmail.com
 
-Comecei pelo backend — mas o objetivo sempre foi Cloud.
-E Cloud só prova quando está no ar.
+Não fiz para testar. Fiz para colocar no ar.
+Cloud não se aprende só lendo — se aprende deployando.
