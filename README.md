@@ -111,10 +111,10 @@ Futuro
 
 ⸻
 
-👨‍💻 Autor
+## 👨‍💻 Autor
 
-Rafael Rodrigues — Chinaman
-Cloud & Backend Developer
-Brasil — 2025
+**Rafael Rodrigues**
+Desenvolvedor Backend • Cloud & DevOps  
+AmazonTech DevLab (projeto autoral)
 
-GitHub: https://github.com/amazonroots
+GitHub: https://github.com/amazonrootsts
