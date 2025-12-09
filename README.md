@@ -26,7 +26,7 @@
 ### 📷 Interface pública – Swagger API (prints reais do ambiente de produção)
 
 <p align="center">
-  <img src="Imagem 09-12-2025 às 02.18.png" width="85%" />
+  <img src="Imagem%2009-12-2025%20às%2002.18.png" width="90%" />
 </p>
 
 > Painel oficial do **AmazonTech DevLab API**, disponível mundialmente.  
