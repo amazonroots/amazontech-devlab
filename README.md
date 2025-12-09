@@ -1,155 +1,186 @@
 🦾 AmazonTech DevLab — Backend for the Brave
 
 Infra real. Deploy real. Zero brincadeira.
-FastAPI + Docker + AWS + PostgreSQL + JWT + Nginx.
+FastAPI • Docker • AWS • PostgreSQL • JWT • Nginx
 
 <p align="center">
   <img src="https://img.shields.io/badge/Cloud-AWS_EC2-black?style=for-the-badge&logo=amazonaws"/>
-  <img src="https://img.shields.io/badge/APIs-FastAPI-black?style=for-the-badge&logo=fastapi"/>
-  <img src="https://img.shields.io/badge/Security-JWT/Auth-black?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/DevOps-Docker_&_Nginx-black?style=for-the-badge&logo=docker"/>
-  <img src="https://img.shields.io/badge/Status-Online%20Global-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/FastAPI-Production-green?style=for-the-badge&logo=fastapi"/>
+  <img src="https://img.shields.io/badge/Database-PostgreSQL-blue?style=for-the-badge&logo=postgresql"/>
+  <img src="https://img.shields.io/badge/Security-JWT-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Docker-Containers-blue?style=for-the-badge&logo=docker"/>
+  <img src="https://img.shields.io/badge/Status-Online_Globally-brightgreen?style=for-the-badge"/>
 </p>
 
 
 
 ⸻
 
-📌 O Propósito
+📌 Objetivo
 
-Esse sistema existe pra provar uma coisa:
-Eu entrego produto. Em produção. Sem enrolação.
-Não é localhost, não é mockup — é microsserviço real rodando no mundo.
+Esse projeto existe por um motivo simples:
+entregar produto real em produção, e não apenas código rodando em localhost.
 
-🔗 Swagger/API Online:
+🔗 API Online — Swagger Docs:
 http://100.26.73.245:8005/docs
-(até o domínio e SSL chegarem — primeira fase concluída)
+
+(domínio + SSL em breve — etapa atual é infraestrutura ativa em produção)
 
 ⸻
 
-🧬 DNA do Projeto
+🧬 O DNA do Projeto
 
-Microsserviço escalável em FastAPI, protegido por JWT, com PostgreSQL persistente e módulo de admin + auditoria.
-Tudo containerizado e colocado na AWS via EC2, sem muleta.
+Backend em FastAPI, seguro com JWT, usando PostgreSQL persistente, containerizado, com Admin + Auditoria, rodando em AWS EC2, orquestrado com Docker e servido via Nginx Reverse Proxy.
 
-Do zero para a nuvem.
-Sem time. Sem tutorial guiado. Só engenharia.
-
-📦 Stack (direto ao ponto)
-	•	Python + FastAPI
-	•	PostgreSQL
-	•	Docker & Docker Compose
-	•	AWS EC2 (Ubuntu 24.04)
-	•	Nginx Reverse Proxy
-	•	JWT Authentication
-	•	Auditoria + Admin Panel
+Código é arte. Infra é guerra.
+E esse projeto foi levado da ideia para a nuvem sem tutoria, sem time — só engenharia.
 
 ⸻
 
-☁️ Arquitetura Cloud/DevOps
+🧪 Stack Técnica
 
-Elemento	Stack	Por que isso importa
-Infra	AWS EC2 (Ubuntu 24.04)	Produção real, IaaS de verdade.
-Deploy	Docker + Docker Compose	Reprodutível e portátil.
-Networking	Elastic IP + Security Groups	IP fixo, firewall configurado.
-Proxy & Web Layer	Nginx Reverse Proxy	Rota estável, pronto pra SSL.
-DB	PostgreSQL containerizado	Persistência real dos dados.
-Auth	JWT	Sessão stateless, padrão enterprise.
-Governança	Admin + Auditoria	Rastro de ações — compliance-friendly.
+Camada	Tecnologia
+Linguagem	Python 3.11
+Framework	FastAPI
+Banco	PostgreSQL (Volume Persistente)
+Deploy	Docker + Docker Compose
+Infra Cloud	AWS EC2 (Ubuntu 24.04)
+Proxy	Nginx Reverse Proxy
+Segurança	JWT Auth
+Observabilidade	Logs + Auditoria
 
 
 ⸻
 
-🔥 Features
+⚙ Principais Features
 	•	Registro/Login com JWT
-	•	Rotas autenticadas (/me)
+	•	Rotas autenticadas como /me
 	•	CRUD completo de Notes
-	•	Painel Admin
-	•	Auditoria de ações críticas
-	•	Banco PostgreSQL persistente
+	•	Painel Admin com permissões elevadas
+	•	Auditoria registrando ações
+	•	PostgreSQL persistente
+	•	Infra 100% rodando em produção
 
-Simples por fora. Robusto por dentro.
-
-⸻
-
-📸 Preview (prints)
-
-(adicione prints depois — visual vende)
-
-/docs (Swagger)
-Auth em ação
-CRUD funcionando
-
+Minimalista na superfície. Robusto por dentro.
 
 ⸻
 
-🛰 Deploy Timeline (sem romance — só fatos)
+💻 Como Rodar Localmente
 
-Data	Evento	Resultado
-08/12/2025	Provisionamento EC2 + Docker/Compose	API e DB rodando em produção
-09/12/2025	Elastic IP + Nginx + Security Group	Rede estável, porta 80 ok
+📥 1. Clonar o repositório
 
-Status: online, ativo, acessível globalmente.
+git clone https://github.com/amazonroots/amazontech-devlab.git
+cd amazontech-devlab
 
-⸻
+🔧 2. Requisitos
+	•	Docker instalado
+	•	Docker Compose habilitado
 
-🧭 Por que isso importa para o mercado?
+(Se quiser alterar variáveis do banco, ajuste o .env antes de subir)
 
-Porque um dev iniciante normalmente só tem CRUD local.
-Aqui tem:
+🚀 3. Subir o projeto
 
-✔ Deploy real na AWS
-✔ Segurança com JWT
-✔ Infra Dockerizada
-✔ Banco durável
-✔ Arquitetura modular pronta pra escalar
-
-Isso coloca o AmazonTech DevLab na prateleira de portfólio sério, não projeto escolar.
-
-⸻
-
-🔥 Como rodar localmente
-
-Rapidão:
-
-# Clone o projeto
-git clone https://github.com/seuuser/AmazonTechDevLab.git
-cd AmazonTechDevLab
-
-# Subir containers
 docker-compose up -d
 
-# Acessar
+Isso vai iniciar:
+	•	Backend (FastAPI)
+	•	Banco PostgreSQL (volume persistente configurado)
+
+🌐 4. Acessar localmente
+
 http://localhost:8005/docs
 
-Sem configuração manual. Plug & play.
+Pronto. Está rodando igual ao ambiente em produção.
 
 ⸻
 
-🗺 Roadmap (próximas mutações do monstro)
-	•	Domínio + HTTPS (Certbot)
-	•	Pipeline CI/CD (GitHub Actions)
-	•	Banco migrando para RDS
-	•	Observabilidade: Grafana/Loki
-	•	Futuro: ECS/EKS para escalar
+🛰 Deploy & Infra Overview
 
-A visão?
-Enterprise. Sem pedir licença.
+Item	Status
+Deploy EC2	✔ ativo
+Docker/Compose	✔ rodando
+IP Elástico	✔ fixo
+Nginx Reverse Proxy	✔ configurado
+API Pública	✔ online
+SSL + Domínio	🔜 próximo passo
+CI/CD	🔜 planejado
+RDS + Observabilidade	🔜 evolução futura
+
+
+⸻
+
+📜 Changelog (Commit Changes)
+
+Data	Evento	Resultado
+06/12/2025	Base FastAPI + CRUD inicial	✔
+07/12/2025	Implementação de JWT Auth (/register, /login, /me)	✔
+08/12/2025	Dockerização + Compose + Volume DB	✔
+08/12/2025	Deploy EC2 — API acessível globalmente	✔
+09/12/2025	Nginx + Security Groups + Firewall configurado	✔ estável
+09/12/2025	Admin + Auditoria adicionados	✔ aplicado
+10/12/2025	Revisão endpoints + otimizações	✔
+Próximo	Domínio + SSL com Certbot	🔜
+Futuro	CI/CD + Grafana/Loki + RDS + ECS/EKS	🎯 evolução
+
+Commit title recomendado no GitHub:
+
+docs: update README with Changelog, Local Setup and UX improvements
+
+
+⸻
+
+🧭 Por que esse projeto importa?
+
+Porque junior normalmente só mostra CRUD local.
+Aqui é backend real, com deploy real, com segurança real.
+
+Te posiciona acima da média porque mostra:
+
+✔ Infra Cloud real (AWS)
+✔ Deploy containerizado
+✔ Segurança e auditoria
+✔ Banco persistente
+✔ Estrutura escalável
+✔ Projeto profissional para portfolio e vagas
+
+⸻
+
+📸 Previews (insira quando quiser)
+
+Coloque prints do Swagger, containers rodando, request funcionando
+Visual vende.
+
+docs.png
+container_running.png
+notes_crud.gif
+
+
+⸻
+
+🗺 Roadmap
+	•	SSL + domínio custom
+	•	Automação de deploy com GitHub Actions
+	•	Observabilidade com Loki/Grafana
+	•	Migração do DB para RDS
+	•	Escalonamento com ECS/EKS
+
+Objetivo final: Enterprise Grade.
 
 ⸻
 
 👤 Autor
 
-Rafael Rodrigues — AmazonTech
-Backend | Cloud | DevOps
+Rafael Rodrigues (AmazonTech)
+Backend • Cloud • DevOps
 📧 rafael.amazontech@gmail.com
 
-“Código é poesia. Infra é guerra.
-E o DevLab é meu campo de batalha.”
+“From Zero to Cloud.
+Build at night. Deploy at dawn.”
 
 ⸻
 
 
 <p align="center">
-  <sub>⚡ From zero to cloud. Built at night. Deployed ao amanhecer.</sub>
+  <sub>🦾 AmazonTech DevLab — Backend for the Brave</sub><br/>
+  <sub>Se chegou até aqui, você já entendeu o recado.</sub>
 </p>
