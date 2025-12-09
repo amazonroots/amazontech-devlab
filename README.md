@@ -1,114 +1,128 @@
-## 🚀 AmazonTech DevLab
+⚡ AMAZONTECH DEVLAB
 
-Backend real em produção — FastAPI • Docker • PostgreSQL • JWT • AWS EC2 • Nginx
+Backend Real em Produção | FastAPI • Docker • PostgreSQL • JWT • AWS EC2 • Nginx
 
 <p align="center">
-<img src="https://img.shields.io/badge/STATUS-LIVE-success?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/DEPLOY-LIVE-success?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/CLOUD-AWS-orange?style=for-the-badge&logo=amazonaws"/>
-<img src="https://img.shields.io/badge/API-FastAPI-009688?style=for-the-badge&logo=fastapi"/>
-<img src="https://img.shields.io/badge/CONTAINERS-Docker-blue?style=for-the-badge&logo=docker"/>
-<img src="https://img.shields.io/badge/DB-PostgreSQL-336791?style=for-the-badge&logo=postgresql"/>
-<img src="https://img.shields.io/badge/AUTH-JWT-important?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/BACKEND-FastAPI-00d1b2?style=for-the-badge&logo=fastapi"/>
+<img src="https://img.shields.io/badge/CONTAINERS-Docker-1e90ff?style=for-the-badge&logo=docker"/>
+<img src="https://img.shields.io/badge/DATABASE-PostgreSQL-336791?style=for-the-badge&logo=postgresql"/>
+<img src="https://img.shields.io/badge/AUTH-JWT-critical?style=for-the-badge"/>
 </p>
 
 
-🔗 Swagger em Produção: http://100.26.73.245:8005/docs
-
-Não é local. Não é mock. É deploy global real.
-
-⸻
-
-✨ Overview rápido para Recrutadores
-
-Este projeto prova algo simples:
-
-eu não só programo — eu entrego em produção.
-
-	•	API rodando 24/7 na AWS
-	•	Infra containerizada com Docker
-	•	Banco PostgreSQL persistente
-	•	Autenticação JWT + rotas privadas
-	•	Nginx servindo HTTP porta 80
-	•	Preparado para HTTPS e CI/CD
-
-É base real para produto. Não estudo, não demo.
+API online no ar globalmente – não é localhost.
+🔗 http://100.26.73.245:8005/docs
 
 ⸻
 
-🧩 Stack
+📌 Sobre
 
-Camada	Tecnologia
-Backend	FastAPI (Python 3.11)
-Banco	PostgreSQL (persistente)
+Infra real de backend rodando 24/7 em EC2 com banco persistente, autenticação JWT e proxy reverso.
+Projeto de produção, criado do zero e entregue em ambiente cloud.
+
+⸻
+
+🔥 Timeline Evolutiva com Visual Futurista
+
+┌─────────────────────── PROGRESSO DO SISTEMA ───────────────────────┐
+│                                                                     │
+│  06/12/2025  ████████████████████████████████████  API + CRUD       │
+│  07/12/2025  ████████████████████████████████████  JWT Auth         │
+│  08/12/2025  ████████████████████████████████████  Docker + DB      │
+│  08/12/2025  ████████████████████████████████████  Deploy EC2       │
+│  09/12/2025  ████████████████████████████████████  Nginx + EIP      │
+│  Next        ███████████████░░░░░░░░░░░░░░░░░░░░░  HTTPS + Domain   │
+│  Future      ███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  CI/CD • RDS       │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+⸻
+
+🕒 Linha do Tempo Detalhada — Visual Estético Neon
+
+╭─────────────────────────────────────╮
+│ 06/12 — O Nascimento do Backend     │
+│ Base FastAPI • CRUD Notes           │
+╰───────────────▲─────────────────────╯
+                │
+╭───────────────┴─────────────────────╮
+│ 07/12 — Identidade & Acesso         │
+│ JWT Auth • /login /register /me     │
+╰───────────────▲─────────────────────╯
+                │
+╭───────────────┴─────────────────────╮
+│ 08/12 — O Corpo da Infra            │
+│ Docker + Docker Compose + DB        │
+│ PostgreSQL persistente              │
+╰───────────────▲─────────────────────╯
+                │
+╭───────────────┴─────────────────────╮
+│ 08/12 — Vida à Aplicação            │
+│ Deploy AWS EC2 + API Global         │
+╰───────────────▲─────────────────────╯
+                │
+╭───────────────┴─────────────────────╮
+│ 09/12 — Estabilização               │
+│ Elastic IP • Porta 80 • Nginx Proxy │
+╰───────────────┬─────────────────────╯
+                ▼
+⚡ Próximo: SSL + Domínio + CI/CD + Observabilidade
+
+Impacto visual entregue.
+Timeline real do desenvolvimento colocada de forma visual e memorável.
+
+⸻
+
+🧩 Tecnologias
+
+Setor	Tech
+Backend	FastAPI (Python)
+Security	JWT Auth
 Deploy	Docker + Docker Compose
-Infra	AWS EC2 • Elastic IP
+Cloud	AWS EC2 + Elastic IP
+Banco	PostgreSQL Persistente
 Proxy	Nginx Reverse Proxy
-Auth	JWT Tokens
+Produção	API online 24/7
 
 
 ⸻
 
-🔥 Features
-	•	Registro/Login com JWT
-	•	/me autenticado
-	•	CRUD Notes
-	•	Admin Panel
-	•	Auditoria de ações
-	•	PostgreSQL com volume persistente
-
-⸻
-
-💻 Como rodar local
+🛰 Como executar localmente
 
 git clone https://github.com/amazonroots/amazontech-devlab.git
 cd amazontech-devlab
 docker-compose up -d
 
-Acesse:
+➡ http://localhost:8005/docs
 
-http://localhost:8005/docs
-
-
-⸻
-
-🛰 Deploy em Produção
-
-Serviço	Status
-API	✔ Online
-Docker + Compose	✔
-Banco PostgreSQL	✔ Persistente
-Nginx Reverse Proxy porta 80	✔
-IP Fixo (Elastic IP)	✔
-SSL + Domain	🔜 Próximo passo
-
-
-⸻
-
-📜 Commit Changes (Resumo Premium)
-
-Versão	O que entregou
-v1.0	FastAPI + JWT + Notes CRUD + Docker + Postgres
-v1.1	Deploy AWS EC2 + Elastic IP + Proxy Nginx
-v1.2 (Next)	Domínio + HTTPS
-v2.0 (Future)	CI/CD • RDS • Grafana/Loki • ECS/EKS
-
+Requisitos: Docker + Docker Compose
 
 ⸻
 
 🧭 Roadmap
-	•	Domínio + HTTPS Certbot
-	•	Pipeline CI/CD
-	•	Observabilidade
-	•	DB → RDS
-	•	Escala → ECS/EKS
+	•	🔐 HTTPS + Domínio
+	•	🚀 CI/CD GitHub Actions
+	•	📊 Monitoramento + Logs
+	•	🐘 RDS
+	•	📡 Escalabilidade EKS/ECS
 
 ⸻
 
-👤 Autor
+👤 Criador
 
-Rafael Rodrigues — AmazonTech
-Backend • Cloud • DevOps
-📩 rafael.amazontech@gmail.com
+╔═══════════════════════════════════════╗
+║   Rafael Rodrigues — AMAZONTECH       ║
+║   Backend • Cloud • DevOps            ║
+║   Em especialização em:               ║
+║     • Infra Cloud AWS                 ║
+║     • Arquitetura Backend             ║
+║     • DevOps & Containers             ║
+║                                       ║
+║   Email: rafael.amazontech@gmail.com  ║
+╚═══════════════════════════════════════╝
 
-“Eu não estudo cloud. Eu subo cloud.”
-
+Engenhei, deployei e escalei sem tutorial segurando minha própria infra.
+Eu estudo e executo.
