@@ -68,14 +68,15 @@ docker-compose up --build
 
 ⸻
 
-📊 Histórico Técnico (Diário real)
+🗂 Histórico Técnico (Diário Real)
 
-Data	Evento
-07/12/2025	Backend funcional local + JWT + CRUD Notes + Docker + PostgreSQL
-08/12/2025	Deploy AWS EC2 • Security Group • Docker Compose • API Pública • Testes
-09/12/2025	Elastic IP atualizado • Correção SSH timeout • docker ps validado • README atualizado com prints
+| Data        | Evento / Evolução |
+|------------|-------------------|
+| **07/12/2025** | Backend funcional local • JWT Auth • CRUD Notes • Docker • PostgreSQL |
+| **08/12/2025** | Deploy AWS EC2 • Security Group configurado • Docker Compose instalado • API pública acessível |
+| **09/12/2025** | Elastic IP atualizado • Correção SSH timeout • `docker ps` validado • README atualizado com prints reais |
 
-Nada de teoria — deploy real, com erros, correção e aprendizado prático.
+> Nada de teoria — foi **deploy real**, com erro, correção e aprendizado na prática.
 
 ⸻
 
