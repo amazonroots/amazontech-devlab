@@ -60,7 +60,7 @@ Aqui construí a jornada completa:
 
 ## 🛠 Rodando Local
 
-``bash
+
 git clone https://github.com/amazonroots/amazontech-devlab.git
 cd amazontech-devlab
 docker-compose up --build
