@@ -1,7 +1,4 @@
-
-🚀 README.md FINAL AJUSTADO (copiar e colar agora)
-
-# ☁ AmazonTech DevLab  
+### ☁ AmazonTech DevLab  
 **Backend completo rodando em produção real na AWS EC2 • FastAPI • Docker • PostgreSQL • JWT • Nginx**
 
 <p align="center">
