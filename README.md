@@ -73,7 +73,7 @@ Backend → Contêinerização → Banco persistente → Rede → Deploy → Pro
 
 ### 🚀 Executar com Docker (recomendado)
 
-```bash
+
 git clone https://github.com/amazonroots/amazontech-devlab.git
 cd amazontech-devlab
 docker-compose up --build
@@ -106,6 +106,7 @@ SSL + Domínio
 🔜 Próxima etapa
 CI/CD GitHub Actions
 📌 Planejado
+
 
 
 </details>
