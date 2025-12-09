@@ -1,161 +1,130 @@
-🏴‍☠️ AmazonTech DevLab — Backend em Produção (EC2 • Docker • FastAPI)
+<p align="center">
+  <img src="https://img.shields.io/badge/AmazonTech_DevLab-Backend_Cloud-orange?style=for-the-badge&logo=aws"/>
+  <img src="https://img.shields.io/badge/FastAPI-Running%20In%20Production-009688?style=for-the-badge&logo=fastapi"/>
+  <img src="https://img.shields.io/badge/Docker-Containerized-blue?style=for-the-badge&logo=docker"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql"/>
+  <img src="https://img.shields.io/badge/Status-Online_Globally-green?style=for-the-badge"/>
+</p>
 
-Projeto real publicado na AWS Free Tier.
-Autenticação JWT • Notes API • Admin & Auditoria • Postgres persistente • Deploy com Docker Compose.
-Zero simulação. Código rodando globalmente.
+---
 
-📌 Swagger Público:
-🔗 http://3.235.187.206:8005/docs
+<h1 align="center">⚡ AmazonTech DevLab — API Cloud Production</h1>
+<p align="center">Backend real, em contêiner, rodando na AWS EC2 — autenticação JWT, notas, auditoria e admin.</p>
 
-⸻
+---
 
-🧩 Sobre o Projeto
+### 🚀 Deploy Online
+📍 **Swagger Docs:**  
+🔗 http://3.235.187.206:8005/docs  
 
-AmazonTech DevLab é meu laboratório pessoal de backend & cloud, construído para prática profissional com foco em:
+_Acessível pelo celular, notebook ou qualquer dispositivo._  
+Rodando **sem localhost**, **sem VPN**, **mundo inteiro acessa**.
 
-✔ FastAPI bem estruturado
-✔ Auth com JWT
-✔ Banco PostgreSQL rodando em container
-✔ Deploy real em EC2 (Free Tier)
-✔ Auditoria, admin, criação de notas
-✔ Acesso público via IP externo
-✔ Infra dockerizada e replicável
+---
 
-Não é app básico. É servidor rodando na nuvem.
+## 🏗 Stack & Infra
 
-⸻
+| Camada | Tecnologia |
+|---|---|
+| Linguagem | Python |
+| Framework | FastAPI |
+| Banco | PostgreSQL (via Docker) |
+| Auth | JWT completo + admin |
+| Deploy | AWS EC2 (Ubuntu) |
+| Infra | Docker + Docker Compose |
+| Segurança | SG Rules + SSH Key |
+| Monitoramento inicial | Logs Docker + HealthCheck |
 
-⚙️ Stack Técnica
+---
 
-Componente	Uso
-FastAPI	API principal
-PostgreSQL	Banco de dados
-Docker + Compose	Containers isolados
-JWT Auth	Login / tokens / security
-AWS EC2 Ubuntu	Hosting
-Nginx Reverse Proxy	Porta 80 → API 8005
-UFW + SG	Segurança e portas abertas
-SwaggerUI	Docs públicas
+## 📜 Features Principais
 
+✔ Login & Registro com JWT  
+✔ Rotas protegidas /auth  
+✔ CRUD de **Notes** com token  
+✔ Sistema **Admin** real  
+✔ **Auditoria de ações** integrada  
+✔ Banco PostgreSQL persistente  
+✔ Deploy EC2 **sem tutoriais — real world**  
+✔ API acessível globalmente  
 
-⸻
+---
 
-🏗 Arquitetura Final em Produção
+## 🔥 Diário Técnico do Deploy
 
-                 🌎 Internet
-                      │
-              ┌───────▼───────┐
-              │    NGINX      │  Porta 80
-              └───────┬───────┘
-                      │ proxy_pass
-                      ▼
-            http://127.0.0.1:8005
-         ┌─────────────────────────┐
-         │      FastAPI + JWT      │
-         │  Docker container API   │
-         └───────────┬────────────┘
-                     │ network
-                     ▼
-              PostgreSQL (5432)
+📅 **08/12/2025 — backend entrou na nuvem**
 
+1. Criação da EC2  
+- Ubuntu 24.04 | t3.micro Free Tier  
+- SSH configurado com `amazontech-key.pem`
 
-⸻
+2. Setup do ambiente  
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install docker.io docker-compose -y
 
-📜 Histórico Técnico — (Tudo que foi feito)
+	3.	Deploy com Docker
 
-🔥 Dia 1 – Estrutura, Docker e API
-	•	Projeto montado com FastAPI
-	•	Autenticação JWT construída
-	•	CRUD Notes implementado
-	•	Área admin com flag is_admin
-	•	Auditoria e logs básicos
-	•	Docker + docker-compose configurado
-	•	Banco Postgres persistente
-	•	Testes locais OK
-
-🔥 Dia 2 – Upload para GitHub + Deploy AWS EC2
-	•	Repositório criado + README inicial
-	•	Push da base dockerizada para GitHub
-	•	Instância EC2 t2.micro criada (Free Tier)
-	•	Chave SSH amazontech-key.pem
-	•	Security Groups com portas abertas:
-	•	22 (SSH)
-	•	8005 (API pública)
-	•	Docker e Compose instalados no servidor
-	•	docker compose up --build -d rodando containers
-	•	Acesso externo validado via celular/browser
-
-🔥 Dia 3 – Infra melhoria + Reverse Proxy + Porta 80
-	•	Instalação e configuração do NGINX
-	•	Criação de backup default.bak
-	•	Criação do reverse proxy:
-
-sudo tee /etc/nginx/sites-available/default > /dev/null << 'EOF'
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    server_name _;
-    location / {
-        proxy_pass http://127.0.0.1:8005;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-EOF
-
-	•	ufw allow 80/tcp liberado
-	•	SG atualizado com porta 80 aberta
-	•	nginx -t e reload bem sucedidos
-	•	API funcionando via porta 80 (+ 8005 ativo)
-
-Resultado final hoje:
-
-✔ API funcionando globalmente
-✔ Porta 80 liberada
-✔ Reverse Proxy ativo
-✔ Servidor pronto para HTTPS futuramente
-✔ Infra estável sem custos (Free Tier)
-
-⸻
-
-Como rodar local
-
-git clone https://github.com/amazonroots/amazontech-devlab
+git clone <repo>
 cd amazontech-devlab
-docker compose up --build
+sudo docker compose up --build -d
 
-Docs → http://localhost:8000/docs
+	4.	Serviços online
 
-⸻
+API: 8005 → 8000 internal
+Postgres: 5432
 
-Como atualizar README com commit change
-
-git add README.md
-git commit -m "docs: README completo + histórico técnico + arquitetura + deploy nginx reverse proxy"
-git push origin main
-
-
-⸻
-
-Roadmap
-	•	🔐 HTTPS com Certbot (quando apontar domínio)
-	•	🗃 Backup/Postgres snapshot automático
-	•	🚀 CI/CD GitHub Actions → deploy push-to-prod
-	•	🛰 RDS no futuro
-	•	📊 Monitoramento: Grafana + Loki
-	•	🖥 Dashboard Admin React/Vue
-	•	🐳 Possível migração para ECS/EKS
+	5.	Testes realizados
+✔ /signup
+✔ /login → token JWT ok
+✔ /notes CRUD
+✔ /admin e /audit com permissão
+✔ Health check via curl externo
 
 ⸻
 
-Autor
+📌 Status Atual
 
-Rafael Rodrigues (Chinaman — nome artístico)
-Cloud • DevOps • Backend
+Módulo	Situação
+Backend API	Online
+JWT Auth	OK
+Notes CRUD	OK
+Auditoria	OK
+Admin	OK
+Deploy AWS	Ativo e Público
+Bugs	Nenhum crítico
+
+
+⸻
+
+🧭 Roadmap Evolução
+
+🔹 Conectar domínio próprio
+🔹 HTTPS + Certbot/Nginx
+🔹 Backup & automations
+🔹 CI/CD com GitHub Actions
+🔹 Observability (Grafana/Loki)
+🔹 Migração futura para RDS
+🔹 Dashboard Web (React)
+
+⸻
+
+🖥 Visão Arquitetural
+
+Mac → SSH → EC2 → Docker → FastAPI → PostgreSQL
+               │
+               └── Exposed → Internet (porta 8005)
+
+Não é demo. É produto real em produção.
+Infra própria, autenticação real, banco real, API pública.
+
+⸻
+
+📄 Autor
+
+Rafael Rodrigues
 📧 rafael.amazontech@gmail.com
 
-
-
-Qual vai ser?
+🔹 Cloud & Backend Dev em construção
+🔹 Criador do AmazonTech DevLab
+🔹 Evoluindo para CI/CD + Infra escalável
