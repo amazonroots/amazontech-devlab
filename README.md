@@ -1,152 +1,152 @@
-<p align="center">
-  <img src="https://dummyimage.com/1200x260/0a0a0a/00e5ff&text=AmazonTech+DevLab+%7C+Backend+%2B+Cloud+%2B+DevOps" alt="AmazonTech DevLab Banner"/>
-</p>
+📌 AMAZONTECH DEVLAB
 
-# AmazonTech DevLab 🚀  
+Backend Real · FastAPI · Docker · PostgreSQL · JWT Auth · AWS EC2 Deploy
 
-### Backend FastAPI • Docker • PostgreSQL • AWS EC2 • Infra Cloud Free Tier
-
-<p align="left">
-  <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python" />
-  <img src="https://img.shields.io/badge/FastAPI-Backend-green?logo=fastapi" />
-  <img src="https://img.shields.io/badge/PostgreSQL-Database-blue?logo=postgresql" />
-  <img src="https://img.shields.io/badge/Docker-Compose-blue?logo=docker" />
-  <img src="https://img.shields.io/badge/AWS-EC2-orange?logo=amazonaws" />
-  <img src="https://img.shields.io/badge/Status-Online-success?logo=cloud" />
-</p>
-
----
-
-## 📌 Visão Geral
-
-O **AmazonTech DevLab** é uma API backend criada para estudo e prática real de **Cloud + DevOps + Backend**, rodando em **produção na AWS** com Docker, PostgreSQL e FastAPI.
-
-✔ Deploy real na AWS EC2  
-✔ Containers rodando com Docker Compose  
-✔ Autenticação JWT + rotas protegidas  
-✔ Acesso público via Elastic IP  
-✔ API pronta para integração com front-end / mobile  
-
----
-
-## 🌍 API Online (Produção)
-
-🔗 **Swagger UI:**  
-📌 http://100.26.73.245/docs  
-
-📡 Health Check:
-```bash
-curl http://100.26.73.245/health
-
+Backend sólido, com autenticação, auditoria, admin e deploy real em produção global.
+Não é demo. É aplicação funcional rodando na nuvem.
 
 ⸻
 
-🛠 Tecnologias
+🚀 Stack Principal
 
-Camada	Ferramenta
-Linguagem	Python
+Área	Tecnologia
+Linguagem	Python 3.12
 Framework	FastAPI
 Banco	PostgreSQL
-Auth	JWT / Bearer Token
-Containers	Docker & Docker Compose
-Deploy	AWS EC2 Free Tier
-Proxy	Nginx (reverse proxy)
+Infra	Docker & Docker Compose
+Cloud	AWS EC2 (Ubuntu 24.04 - Free Tier)
+Auth	JWT Access Token
+Auditoria	Logs internos de ações
+Deploy	Produção acessível globalmente
 
 
 ⸻
 
-🚀 Executar Localmente
+🌍 Deploy Atual
+
+📡 API Online → http://3.235.187.206:8005/docs
+
+Status de Produção
+
+Serviço	Porta	Estado
+API FastAPI	8005 → 8000 interno via Docker	✔ Online
+PostgreSQL	5432	✔ Rodando
+Autenticação JWT	✔	
+CRUD Notes	✔	
+Admin & Auditoria	✔	
+
+
+⸻
+
+📒 Diário Técnico – Último Marco (08/12/2025)
+	1.	Instância criada na AWS EC2
+	2.	Instalação Docker + Compose
+	3.	Projeto clonado e containerizado
+	4.	Deploy rodando 100% funcional
+	5.	Testes completos via insomnia/browser
+	6.	API acessível globalmente (via IPv4 público)
+	7.	UFW liberado + Security Group configurado
+	8.	Proxy reverso via Nginx configurado para porta 80 (pronto para HTTPS futuro)
+	9.	Elastic IP configurado para endpoint fixo
+
+⸻
+
+🔐 Endpoints Principais
+
+Método	Rota	Descrição
+POST	/signup	Criação de usuário
+POST	/login	Gera JWT
+GET	/me	User autenticado
+POST	/notes	Cria nota
+GET	/notes	Lista notas
+ADMIN	/admin	Área restrita
+AUDIT	/audit	Logs internos
+
+
+⸻
+
+🧩 Arquitetura (Resumo Técnico)
+
+FastAPI  →  Controllers
+         →  Services
+         →  Models (SQLAlchemy)
+         →  Auth + JWT
+         →  Auditoria
+         →  PostgreSQL
+         →  Docker Compose
+         ↓
+       AWS EC2 (produção)
+
+
+⸻
+
+🛠 Como rodar localmente
 
 git clone https://github.com/amazonroots/amazontech-devlab.git
 cd amazontech-devlab
-docker compose up --build -d
+docker compose up --build
 
-🔗 Local: http://localhost:8005/docs
+Swagger → http://localhost:8000/docs
 
 ⸻
 
-📂 Estrutura
+☁ Como rodar em produção (EC2 já configurado)
+
+ssh -i ~/.ssh/amazontech-key.pem devlab@3.235.187.206
+cd amazontech-devlab
+sudo docker compose up --build -d
+sudo docker ps
+
+
+⸻
+
+🔥 Roadmap Realista
+
+Etapa	Status	Próximo passo
+Deploy EC2	✔	
+Elastic IP	✔	
+Nginx porta 80	✔	
+HTTPS Certbot	⏳	implementar
+Domínio próprio	⏳	futuramente
+CI/CD GitHub Actions	⏳	auto-deploy
+RDS + Backup	⏳	expansão
+Observabilidade Grafana	⏳	produção robusta
+Painel Web Admin	⏳	optional
+
+
+⸻
+
+📁 Estrutura do projeto
 
 amazontech-devlab/
-├─ app/
-│  ├─ main.py
-│  ├─ auth/
-│  ├─ notes/
-│  ├─ admin/
-│  └─ audit/
-├─ docker-compose.yml
-├─ Dockerfile
-└─ README.md
+│── app/
+│   ├── auth/
+│   ├── notes/
+│   ├── admin/
+│   ├── audit/
+│   └── db.py
+│── docker-compose.yml
+│── Dockerfile
+│── README.md ← este arquivo
 
 
 ⸻
 
-🔐 Rotas principais
+🔥 Commit Change obrigatório
 
-Endpoint	Função	Auth
-POST /signup	Registrar usuário	❌
-POST /login	Gerar JWT	❌
-GET /me	Usuário atual	✔ Token
-POST /notes	Criar nota	✔ Token
-GET /notes	Listar notas	✔ Token
-/admin	Painel admin	✔ Admin
-/audit	Auditoria	✔ Admin
+Depois de colar o README:
 
+git add README.md
+git commit -m "docs: README final revisado e estruturado profissionalmente"
+git push origin main
 
-⸻
-
-🧩 Arquitetura
-
-flowchart LR
-A[Usuário] -->|HTTP/HTTPS| B[Nginx - Reverse Proxy]
-B --> C[FastAPI - API]
-C --> D[(PostgreSQL)]
-subgraph Infra AWS
-B
-C
-D
-end
-
-
-⸻
-
-📈 Status do Projeto
-
-Item	Estado
-Backend FastAPI	✔ Estável
-Banco Dockerizado	✔
-Deploy AWS	✔ Online
-Logs & Auditoria	✔
-SSL/HTTPS	🔜 Próximo passo
-CI/CD	🔜 Planejado
-
-
-⸻
-
-🛣 Roadmap
-
-Curto prazo
-	•	Domínio + DNS
-	•	HTTPS com Certbot (Free)
-	•	Backup automático do banco
-
-Longo prazo
-	•	CI/CD GitHub Actions
-	•	Terraform (IaC)
-	•	Observabilidade (Grafana/Loki/CloudWatch)
-	•	Dashboard React/Next.js
 
 ⸻
 
 👤 Autor
 
-Rafael Rodrigues
-Backend • Cloud • DevOps
+Rafael Rodrigues (Chinaman)
+Cloud · DevOps · Backend Engineering
 
-🔗 GitHub: https://github.com/amazonroots
-
-⸻
-
-📄 Licença
-
-MIT © 2025 Rafael Rodrigues
+📎 GitHub: https://github.com/amazonroots
+📩 Contato: rafael.devcloud@proton.me (se quiser coloco outro)
