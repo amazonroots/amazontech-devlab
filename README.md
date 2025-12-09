@@ -71,7 +71,7 @@ Backend → Contêinerização → Banco persistente → Rede → Deploy → Pro
 - Docker Compose
 - Python 3.10+ (opcional — se quiser rodar sem Docker)
 
-### 🚀 Executar com Docker
+### 🚀 Executar com Docker (recomendado)
 
 ```bash
 git clone https://github.com/amazonroots/amazontech-devlab.git
@@ -83,20 +83,30 @@ docker-compose up --build
 
 
 <details>
-<summary><strong>☁️ Deploy em Cloud AWS (clique para expandir)</strong></summary>
+<summary><strong>☁️ Deploy em Cloud AWS — clique para expandir</strong></summary>
 
 
 Configuração em produção real — com infraestrutura, persistência e acesso externo.
 
-Componente	Status
-AWS EC2 (Ubuntu 24.04)	🟢 Online
-Elastic IP	🟢 Configurado
-Docker Compose	🟢 Rodando
-PostgreSQL Persistente	🟢 Ativo
-Nginx Reverse Proxy	🟢 Funcionando
-Endpoint público	🟢 Acessível globalmente
-SSL + Domínio	🔜 Em andamento
-CI/CD GitHub Actions	📌 Planejado
+Componente
+Status
+AWS EC2 (Ubuntu 24.04)
+🟢 Online
+Elastic IP Fixo
+🟢 Configurado
+Docker Compose (API + DB)
+🟢 Rodando
+PostgreSQL Persistente
+🟢 Ativo
+Nginx Reverse Proxy (80)
+🟢 Funcionando
+Endpoint Público
+🟢 Acessível globalmente
+SSL + Domínio
+🔜 Próxima etapa
+CI/CD GitHub Actions
+📌 Planejado
+
 
 </details>
 
