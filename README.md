@@ -23,6 +23,17 @@
 
 ---
 
+### 📷 Interface pública – Swagger API (prints reais do ambiente de produção)
+
+<p align="center">
+  <img src="Imagem 09-12-2025 às 02.18.png" width="85%" />
+</p>
+
+> Painel oficial do **AmazonTech DevLab API**, disponível mundialmente.  
+Permite testar **login, signup, notas, auditoria e endpoints administrativos** direto do navegador.
+
+---
+
 ## 🧭 O que é o AmazonTech DevLab?
 
 Um laboratório de **Cloud + Backend + DevOps** projetado com um objetivo direto:
