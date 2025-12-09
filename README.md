@@ -65,10 +65,8 @@ O primeiro tijolo da minha carreira Cloud.**
 
 Clone o repositório e suba a stack Docker:
 
-```bash
-git clone https://github.com/amazonroots/amazontech-devlab.git
-cd amazontech-devlab
-docker-compose up -d
+🔗 (clique aqui):
+https://github.com/amazonroots/amazontech-devlab
 
 📄 Docs Local:
 http://localhost:8005/docs
