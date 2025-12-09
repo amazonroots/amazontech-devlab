@@ -1,4 +1,6 @@
 
+🚀 README.md FINAL AJUSTADO (copiar e colar agora)
+
 # ☁ AmazonTech DevLab  
 **Backend completo rodando em produção real na AWS EC2 • FastAPI • Docker • PostgreSQL • JWT • Nginx**
 
@@ -12,7 +14,7 @@
 </p>
 
 🔗 **Swagger público:**  
-http://100.26.73.245:8005/docs
+http://100.26.73.245:8005/docs  
 
 > Não é localhost. Não é mock. **É produção real rodando 24/7 via Cloud AWS.**
 
@@ -64,13 +66,15 @@ O primeiro tijolo da minha carreira Cloud.**
 
 ## 🛠 Como rodar localmente
 
+Clone o repositório e suba a stack Docker:
+
 ```bash
 git clone https://github.com/amazonroots/amazontech-devlab.git
 cd amazontech-devlab
 docker-compose up -d
 
-📄 Docs: http://localhost:8005/docs
-⚙ Requisitos: Docker + Docker Compose
+📄 Docs Local:
+http://localhost:8005/docs
 
 ⸻
 
@@ -134,3 +138,4 @@ Email: rafael.amazontech@gmail.com
 
 Não fiz para testar. Fiz para colocar no ar.
 Cloud não se aprende só lendo — se aprende deployando.
+
