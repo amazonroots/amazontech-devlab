@@ -2,148 +2,165 @@
   <img src="da348e15a643411f3e3d6eb8be4613bff71d1e8cd1398ef2d6527de13467c096.png" width="100%" />
 </p> 
 
-### ☁️ AmazonTech DevLab **Backend completo rodando em produção real na AWS EC2 · FastAPI · Docker · PostgreSQL · JWT · Nginx**
+Você quer refazer o README inteiro, mantendo o conteúdo, mas deixando ele mais bonito, mais profissional, mais limpo, com hierarquia visual forte e linguagem de impacto, correto?
+
+Então segura — vou te entregar agora uma versão completa, revisada, formatada, com design visual mais elegante e com aquele tom de profissional que faz recrutador e tech lead olhar duas vezes.
+
+Tu só vai copiar e colar no seu README.md substituindo tudo.
+Depois só salvar e colocar o commit message:
+
+docs: full redesign README.md
+
+
+⸻
+
+README.md NOVO — versão premium 🔥
+
+<p align="center">
+  <img src="da348e15a643411f3e3d6eb8be4613bff71d1e8cd1398ef2d6527de13467c096.png" width="100%"/>
+</p>
+
+<h1 align="center">☁️ AmazonTech DevLab</h1>
+<h3 align="center">Backend completo rodando em produção real na AWS · FastAPI · Docker · PostgreSQL · JWT · Nginx</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Online-success?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge&logo=amazonaws"/>
   <img src="https://img.shields.io/badge/FastAPI-Backend-00ffc8?style=for-the-badge&logo=fastapi"/>
-  <img src="https://img.shields.io/badge/Docker-Container-blue?style=for-the-badge&logo=docker"/>
+  <img src="https://img.shields.io/badge/Docker-Containers-blue?style=for-the-badge&logo=docker"/>
   <img src="https://img.shields.io/badge/PostgreSQL-Database-0277bd?style=for-the-badge&logo=postgresql"/>
   <img src="https://img.shields.io/badge/JWT-Auth-critical?style=for-the-badge"/>
 </p>
 
-🔗 **Swagger público:**  
-http://100.26.73.245:8005/docs  
+---
 
-> Não é localhost. Não é mock. **É produção real rodando 24/7 via Cloud AWS.**
+🔗 **Swagger público (API em produção):**  
+📍 http://100.26.73.245:8005/docs  
+
+> **Sem localhost. Sem simulação. É produção real 24/7 rodando na AWS.**
 
 ---
 
-## 🧭 O que é este projeto?
+## 🧭 O que é o AmazonTech DevLab?
 
-O **AmazonTech DevLab** é meu laboratório pessoal de **Cloud + Backend + DevOps**, criado com um objetivo claro:
+Um laboratório de **Cloud + Backend + DevOps** projetado com um objetivo direto:
 
-> **Aprender Cloud na prática e provar que sou capaz de construir, configurar e publicar uma aplicação completa sozinho.**
+> **Aprender infraestrutura e produção de verdade, construindo algo que vai para o ar — e não só para o notebook.**
 
-Eu não tinha um projeto pronto para subir — então eu criei um.  
-Desenvolvi o backend, implementei autenticação, contêinerizei a aplicação, preparei o banco e subi para a nuvem.
+Aqui eu construí tudo do zero:  
+Backend → Contêinerização → Banco persistente → Rede → Deploy → Proxy → Acesso global.
 
-Este repositório documenta não apenas o código, mas **a jornada técnica**.
+É meu **case inicial de produção**, fundação do meu ecossistema AmazonTech.
 
 ---
 
-## 🧩 Por que ele existe
+## 🎯 Por que esse projeto existe?
 
-- Para **praticar arquitetura real**, não apenas teoria  
-- Para **subir um serviço completo para a AWS** com infraestrutura própria  
-- Para aprender **segurança, rede, deploy, logs, escalabilidade e automação**  
-- Para construir a base de projetos futuros (como o *Sentinel-21*)  
-- Para ter **um case sólido de Cloud/DevOps** no meu portfólio  
+✔ Criar experiência real em Cloud — não só teoria  
+✔ Subir aplicação completa com infraestrutura própria  
+✔ Aprender segurança, logs, proxy, rede e automação  
+✔ Construir base para o projeto maior **Sentinel-21**  
+✔ Ter um projeto forte no portfólio para o mercado
 
-Feito **100% solo**, do zero, sem tutorial mastigado, com erro, tentativa, solução e deploy final.
-
-> **Projeto raiz do meu ecossistema AmazonTech.  
-O primeiro tijolo da minha carreira Cloud.**
+> **Sem copiar — construído com cabeça, erro, correção e sangue no teclado.**
 
 ---
 
 ## ⚙ Stack Técnica
 
-| Camada | Tecnologias |
+| Camada | Ferramentas |
 |---|---|
 | Linguagem | Python 3.11 |
 | Framework | FastAPI |
-| Banco | PostgreSQL (volume persistente) |
+| Banco | PostgreSQL com volume persistente |
 | Containers | Docker + Docker Compose |
 | Cloud | AWS EC2 (Ubuntu 24.04) |
 | Rede | Security Groups + Elastic IP |
-| Proxy | Nginx Reverse Proxy porta 80 |
-| Autenticação | JWT Tokens |
-| Observação | Acesso global em produção |
+| Proxy | Nginx Reverse (porta 80) |
+| Auth | JWT Tokens |
+| Deploy | Produção global |
 
 ---
 
-### 🛠 Como rodar o projeto localmente
+## 🛠 Rodando localmente
 
-Você pode executar o AmazonTech DevLab localmente usando Docker e Docker Compose.
+### 📦 Requisitos
+- Docker
+- Docker Compose
+- Python 3.10+ (opcional — se quiser rodar sem Docker)
 
-#### 📦 Requisitos
-
-- Docker instalado
-- Docker Compose instalado
-- Python 3.10+ (apenas se quiser rodar sem Docker)
-
-#### 🚀 Executar com Docker (recomendado)
+### 🚀 Executar com Docker
 
 ```bash
 git clone https://github.com/amazonroots/amazontech-devlab.git
 cd amazontech-devlab
 docker-compose up --build
+
+
 ⸻
 
+
 <details>
-  <summary>☁️ Deploy em Cloud AWS</summary>
+<summary><strong>☁️ Deploy em Cloud AWS (clique para expandir)</strong></summary>
 
-Estruturado como produção real — servidor, rede, infraestrutura e acesso global.
 
-| Componente                      | Status             |
-|---------------------------------|--------------------|
-| AWS EC2 (Ubuntu 24.04)         | 🟢 Online          |
-| Elastic IP (fixo)              | 🟢 Configurado     |
-| Docker Compose (API + DB)      | 🟢 Rodando         |
-| PostgreSQL Persistente         | 🟢 Ativo           |
-| Nginx Reverse Proxy (80)       | 🟢 Funcionando     |
-| Endpoint Público               | 🟢 Acessível no mundo |
-| SSL + Domínio                  | 🔜 Próxima etapa   |
-| CI/CD GitHub Actions           | 📌 Planejado       |
+Configuração em produção real — com infraestrutura, persistência e acesso externo.
+
+Componente	Status
+AWS EC2 (Ubuntu 24.04)	🟢 Online
+Elastic IP	🟢 Configurado
+Docker Compose	🟢 Rodando
+PostgreSQL Persistente	🟢 Ativo
+Nginx Reverse Proxy	🟢 Funcionando
+Endpoint público	🟢 Acessível globalmente
+SSL + Domínio	🔜 Em andamento
+CI/CD GitHub Actions	📌 Planejado
 
 </details>
 
 
+
 ⸻
 
-📊 Evolução do Projeto
+📊 Evolução do projeto
 
 [██████████████] Backend + CRUD Notes
 [██████████████] JWT Auth
-[██████████████] Docker + PostgreSQL Persistente
+[██████████████] Docker + Volume PG
 [██████████████] Deploy AWS EC2
-[██████████████] Nginx Proxy + Porta 80
-[██████░░░░░░░░] Domínio + HTTPS (em andamento)
-[██░░░░░░░░░░░░] CI/CD + Observabilidade (planejado)
+[██████████████] Nginx Proxy porta 80
+[██████░░░░░░░░] Domínio + HTTPS
+[██░░░░░░░░░░░░] CI/CD + Observabilidade
 
 
 ⸻
 
-🔮 Próximos passos (roadmap)
-	•	Domínio próprio + Certbot (HTTPS)
-	•	Pipeline CI/CD com GitHub Actions
-	•	Logs + Monitoramento (Grafana/Prometheus/Loki)
+🗺 Roadmap
+	•	Domínio próprio + HTTPS (Certbot)
+	•	CI/CD com GitHub Actions
+	•	Logs e monitoramento (Grafana/Prometheus/Loki)
 	•	Banco migrado para Amazon RDS
 	•	Escalonamento com ECS/EKS
-	•	Documentação técnica detalhada da arquitetura
+	•	Documentação arquitetural completa
 
 ⸻
 
-🌌 Visão e Continuidade
+🌌 Visão de futuro
 
-Este é apenas o primeiro projeto do meu ciclo DevOps/Cloud.
+Este é o primeiro passo do meu ciclo DevOps/Cloud.
+O próximo será Sentinel-21 — Firewall Cognitivo para IA.
+Depois: microserviços, filas, monitoramento, automação e alta disponibilidade.
 
-O próximo será o Sentinel-21 — Segurança e Firewall Cognitivo para IA.
-Depois virão microserviços, mensageria, filas, RDS, observabilidade, automação.
-
-Cada repositório terá sua própria história.
-Este aqui é onde tudo começou.
+Cada repositório será uma peça desse universo.
+E este aqui é a origem da jornada.
 
 ⸻
 
 👤 Autor
 
-Rafael Rodrigues – AmazonTech  
-Backend • Cloud • DevOps  
-Email: rafael.amazontech@gmail.com
+Rafael Rodrigues — AmazonTech
+Backend • Cloud • DevOps
+📩 rafael.amazontech@gmail.com
 
 Não fiz para testar. Fiz para colocar no ar.
-Cloud não se aprende só lendo — se aprende deployando.
-
+Cloud não se aprende lendo — se aprende deployando.
