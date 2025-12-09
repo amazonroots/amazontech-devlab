@@ -64,16 +64,22 @@ O primeiro tijolo da minha carreira Cloud.**
 
 ---
 
-## 🛠 Como rodar localmente
+### 🛠 Como rodar o projeto localmente
 
-Clone o repositório e suba a stack Docker:
+Você pode executar o AmazonTech DevLab localmente usando Docker e Docker Compose.
 
-🔗 (clique aqui):
-https://github.com/amazonroots/amazontech-devlab
+#### 📦 Requisitos
 
-📄 Docs Local:
-http://localhost:8005/docs
+- Docker instalado
+- Docker Compose instalado
+- Python 3.10+ (apenas se quiser rodar sem Docker)
 
+#### 🚀 Executar com Docker (recomendado)
+
+```bash
+git clone https://github.com/amazonroots/amazontech-devlab.git
+cd amazontech-devlab
+docker-compose up --build
 ⸻
 
 ☁ Deploy em Cloud AWS
