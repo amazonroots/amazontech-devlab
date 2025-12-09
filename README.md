@@ -1,107 +1,114 @@
-🦾 AmazonTech DevLab
+## 🚀 AmazonTech DevLab
 
-Backend/API em produção real na AWS – FastAPI + Docker + PostgreSQL + JWT + Nginx
+Backend real em produção — FastAPI • Docker • PostgreSQL • JWT • AWS EC2 • Nginx
 
 <p align="center">
-<img src="https://img.shields.io/badge/STATUS-ONLINE-success?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/CLOUD-AWS_EC2-orange?style=for-the-badge&logo=amazonaws"/>
-<img src="https://img.shields.io/badge/API-FastAPI-0Af?style=for-the-badge&logo=fastapi"/>
-<img src="https://img.shields.io/badge/DOCKER-Compose-blue?style=for-the-badge&logo=docker"/>
-<img src="https://img.shields.io/badge/DB-PostgreSQL-316192?style=for-the-badge&logo=postgresql"/>
-<img src="https://img.shields.io/badge/AUTH-JWT-lightgrey?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/STATUS-LIVE-success?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/CLOUD-AWS-orange?style=for-the-badge&logo=amazonaws"/>
+<img src="https://img.shields.io/badge/API-FastAPI-009688?style=for-the-badge&logo=fastapi"/>
+<img src="https://img.shields.io/badge/CONTAINERS-Docker-blue?style=for-the-badge&logo=docker"/>
+<img src="https://img.shields.io/badge/DB-PostgreSQL-336791?style=for-the-badge&logo=postgresql"/>
+<img src="https://img.shields.io/badge/AUTH-JWT-important?style=for-the-badge"/>
 </p>
 
 
-🔗 API Online (Swagger): http://100.26.73.245:8005/docs
+🔗 Swagger em Produção: http://100.26.73.245:8005/docs
 
-Deploy real, público e acessível globalmente.
-
-⸻
-
-💡 O que é isso?
-
-Um microsserviço backend sólido e pronto para produção, com segurança, banco persistente e deploy estável na AWS.
-Não é CRUD local — é stack montada e operando em nuvem.
-
-Perfeito como base para aplicações maiores, produtos, escalabilidade e integrações.
+Não é local. Não é mock. É deploy global real.
 
 ⸻
 
-⚙ Tecnologias principais
-	•	FastAPI (Python) – API performática moderna
-	•	Docker + Docker Compose – containerização completa
-	•	PostgreSQL – DB persistente com volume
-	•	JWT Auth – login/registro/token + rotas seguras
-	•	Nginx Reverse Proxy – HTTP público porta 80
-	•	AWS EC2 – deploy real em nuvem com Elastic IP
+✨ Overview rápido para Recrutadores
+
+Este projeto prova algo simples:
+
+eu não só programo — eu entrego em produção.
+
+	•	API rodando 24/7 na AWS
+	•	Infra containerizada com Docker
+	•	Banco PostgreSQL persistente
+	•	Autenticação JWT + rotas privadas
+	•	Nginx servindo HTTP porta 80
+	•	Preparado para HTTPS e CI/CD
+
+É base real para produto. Não estudo, não demo.
 
 ⸻
 
-🚀 Features
+🧩 Stack
 
-Recurso	Status
-Login/Registro com JWT	✔
-/me autenticado	✔
-CRUD Notes	✔
-Painel Admin	✔
-Auditoria de ações	✔
-Deploy em produção AWS	✔
+Camada	Tecnologia
+Backend	FastAPI (Python 3.11)
+Banco	PostgreSQL (persistente)
+Deploy	Docker + Docker Compose
+Infra	AWS EC2 • Elastic IP
+Proxy	Nginx Reverse Proxy
+Auth	JWT Tokens
 
 
 ⸻
 
-📦 Como rodar localmente
+🔥 Features
+	•	Registro/Login com JWT
+	•	/me autenticado
+	•	CRUD Notes
+	•	Admin Panel
+	•	Auditoria de ações
+	•	PostgreSQL com volume persistente
+
+⸻
+
+💻 Como rodar local
 
 git clone https://github.com/amazonroots/amazontech-devlab.git
 cd amazontech-devlab
 docker-compose up -d
 
-Acesse em:
+Acesse:
 
 http://localhost:8005/docs
 
-Requisitos: Docker + Docker Compose
 
 ⸻
 
-🛰 Infra em Produção
+🛰 Deploy em Produção
 
-Componente	Status
-EC2 Ubuntu 24.04	Online
-IP Elástico	Fixo
-Proxy Nginx porta 80	Ativo
-API Pública	Operacional
-DB PostgreSQL	Persistente
-SSL/Domain	Próxima fase
-
-
-⸻
-
-📜 Commit Changes (resumo executivo)
-
-Versão	Entregas
-v1.0	FastAPI + JWT + CRUD + Docker + PostgreSQL
-v1.1	Deploy AWS EC2 + Elastic IP + Proxy/Nginx
-v1.2 (Next)	SSL + domínio custom
-v2.0 (Future)	CI/CD • RDS • Observabilidade • ECS/EKS
+Serviço	Status
+API	✔ Online
+Docker + Compose	✔
+Banco PostgreSQL	✔ Persistente
+Nginx Reverse Proxy porta 80	✔
+IP Fixo (Elastic IP)	✔
+SSL + Domain	🔜 Próximo passo
 
 
 ⸻
 
-🧭 Roadmap Evolutivo
-	•	🔐 HTTPS + domínio
-	•	🚀 CI/CD GitHub Actions
-	•	📊 Logs + Monitoramento
-	•	🐘 DB → RDS
-	•	🧱 Escalar para ECS/EKS
+📜 Commit Changes (Resumo Premium)
+
+Versão	O que entregou
+v1.0	FastAPI + JWT + Notes CRUD + Docker + Postgres
+v1.1	Deploy AWS EC2 + Elastic IP + Proxy Nginx
+v1.2 (Next)	Domínio + HTTPS
+v2.0 (Future)	CI/CD • RDS • Grafana/Loki • ECS/EKS
+
+
+⸻
+
+🧭 Roadmap
+	•	Domínio + HTTPS Certbot
+	•	Pipeline CI/CD
+	•	Observabilidade
+	•	DB → RDS
+	•	Escala → ECS/EKS
 
 ⸻
 
 👤 Autor
 
 Rafael Rodrigues — AmazonTech
-Backend | Cloud | DevOps
-📧 rafael.amazontech@gmail.com
+Backend • Cloud • DevOps
+📩 rafael.amazontech@gmail.com
 
-“Código é poesia. Infra é guerra. Eu faço os dois.”
+“Eu não estudo cloud. Eu subo cloud.”
 
