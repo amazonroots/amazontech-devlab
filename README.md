@@ -1,22 +1,4 @@
 <p align="center">
-  <img src="da348e15a643411f3e3d6eb8be4613bff71d1e8cd1398ef2d6527de13467c096.png" width="100%" />
-</p> 
-
-Você quer refazer o README inteiro, mantendo o conteúdo, mas deixando ele mais bonito, mais profissional, mais limpo, com hierarquia visual forte e linguagem de impacto, correto?
-
-Então segura — vou te entregar agora uma versão completa, revisada, formatada, com design visual mais elegante e com aquele tom de profissional que faz recrutador e tech lead olhar duas vezes.
-
-Tu só vai copiar e colar no seu README.md substituindo tudo.
-Depois só salvar e colocar o commit message:
-
-docs: full redesign README.md
-
-
-⸻
-
-README.md NOVO — versão premium 🔥
-
-<p align="center">
   <img src="da348e15a643411f3e3d6eb8be4613bff71d1e8cd1398ef2d6527de13467c096.png" width="100%"/>
 </p>
 
