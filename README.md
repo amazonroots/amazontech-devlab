@@ -1,53 +1,52 @@
-# AmazonTech DevLab — FastAPI + Docker + PostgreSQL + AWS EC2 🚀
+# AmazonTech DevLab 🚀  
+Backend FastAPI | Docker | PostgreSQL | AWS EC2
 
-**Backend em produção, rodando em infraestrutura própria na nuvem.**  
-Projeto criado para laboratório profissional em **Cloud / DevOps / Backend**, com deploy real e acesso global.
-
-> **"Infra própria, backend sólido e deploy funcional.  
-> Não é demo — é produto rodando na nuvem."**
-
----
-
-## 📌 Sobre o projeto
-
-O **AmazonTech DevLab** é um backend desenvolvido em Python com FastAPI, utilizando autenticação JWT, CRUD de notas, área administrativa e auditoria.  
-Toda a infraestrutura roda conteinerizada com Docker + Docker Compose e publicada na AWS EC2 Free Tier.
-
-É um projeto de portfólio técnico para demonstrar experiência prática em desenvolvimento de APIs, cloud computing e deploy profissional.
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-green?logo=fastapi)
+![Docker](https://img.shields.io/badge/Docker-Compose-blue?logo=docker)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue?logo=postgresql)
+![AWS](https://img.shields.io/badge/Cloud-AWS%20EC2-orange?logo=amazonaws)
+![Status](https://img.shields.io/badge/Deploy-Online-success)
 
 ---
 
-## 🛠 Stack Principal
+## 📌 Visão Geral
 
-| Camada | Tecnologia |
-|-------|------------|
-| Linguagem | Python 3.12 |
-| Framework Web | FastAPI |
-| Banco | PostgreSQL |
-| Autenticação | JWT / Bearer Token |
-| Containers | Docker + Docker Compose |
-| Infraestrutura | AWS EC2 (Ubuntu 24.04) |
-| Reverse Proxy | Nginx |
-| OS local | macOS + VS Code + Zsh |
+**AmazonTech DevLab** é uma API backend desenvolvida com **FastAPI + PostgreSQL**, containerizada com **Docker Compose** e hospedada na **AWS EC2 Free Tier**.  
+Projeto criado como laboratório profissional para prática real de infraestrutura em nuvem, deploy, autenticação JWT e boas práticas Dev/Cloud.
+
+✔ Deploy real em produção  
+✔ Containers rodando com Docker  
+✔ Banco PostgreSQL isolado  
+✔ JWT Auth com rotas protegidas  
+✔ Swagger UI aberto ao público  
 
 ---
 
-## 🌍 Deploy em Produção (Ativo)
-
-Instância EC2 com Docker + PostgreSQL + FastAPI rodando 24/7.  
-A API está acessível publicamente via Elastic IP.
+## 🌍 API em Produção
 
 🔗 **Swagger UI:**  
-**http://100.26.73.245/docs**
+📌 http://100.26.73.245/docs  
 
-📡 Health check:  
-`curl http://100.26.73.245/health`
-
----
-
-## ▶ Como rodar localmente
-
+📡 Health Check:
 ```bash
+curl http://100.26.73.245/health
+
+
+⸻
+
+🛠 Tecnologias Utilizadas
+	•	Python + FastAPI
+	•	PostgreSQL (container)
+	•	Docker + Docker Compose
+	•	Nginx (reverse proxy)
+	•	AWS EC2 Free Tier
+	•	Autenticação JWT + Bearer Token
+
+⸻
+
+🚀 Como rodar localmente
+
 git clone https://github.com/amazonroots/amazontech-devlab.git
 cd amazontech-devlab
 docker compose up --build -d
@@ -56,41 +55,45 @@ API local: http://localhost:8005/docs
 
 ⸻
 
+📂 Estrutura do Projeto
+
+amazontech-devlab/
+├─ app/
+│  ├─ main.py
+│  ├─ auth/
+│  ├─ notes/
+│  ├─ admin/
+│  └─ audit/
+├─ docker-compose.yml
+├─ Dockerfile
+└─ README.md
+
+
+⸻
+
 🔐 Rotas principais
 
 Rota	Função	Auth
 POST /signup	Criar usuário	❌
-POST /login	Autenticar e gerar token JWT	❌
-GET /me	Perfil do usuário	✔ Token
-POST /notes	Criar nota	✔ Token
-GET /notes	Listar notas	✔ Token
+POST /login	Login + Token JWT	❌
+GET /me	Info do usuário	✔
+POST /notes	Criar nota	✔
+GET /notes	Listar notas	✔
 /admin	Área administrativa	✔ Admin
 /audit	Auditoria	✔ Admin
 
 
 ⸻
 
-🧪 Resultados em produção
+📈 Status Atual
 
-✔ Signup funcionando
-✔ Login retornando JWT
-✔ CRUD Notes operacional
-✔ Rotas autenticadas OK
-✔ Admin + Auditoria protegidas
-✔ Deploy EC2 validado em celular/navegador
-✔ API online global sem custo (Free Tier)
-
-⸻
-
-📍 Status Atual (08/12/2025)
-
-Componente	Status
-Backend FastAPI	✔ Estável
-PostgreSQL	✔
+Item	Status
+Backend FastAPI	✔
+Banco PostgreSQL	✔
+Deploy AWS EC2	✔ Online
 Docker Compose	✔
-Deploy AWS	✔ Online
-Elastic IP	✔
-Bugs críticos	❌ Nenhum
+Swagger Docs	✔ Público
+SSL/HTTPS	❌ a implementar
 
 
 ⸻
@@ -98,23 +101,21 @@ Bugs críticos	❌ Nenhum
 🗺 Roadmap
 
 Curto prazo
-	•	Adicionar domínio próprio (via DNS)
-	•	HTTPS com Certbot + SSL
-	•	Backups automáticos
+	•	Configurar domínio + DNS
+	•	HTTPS com Certbot (free)
+	•	Backup automático do PostgreSQL
 
-Futuro
+Próximos passos
 	•	CI/CD com GitHub Actions
-	•	Terraform para Infra como Código
-	•	Migração para RDS
-	•	Observabilidade (Grafana/Loki/CloudWatch)
-	•	Frontend (React / Next.js) + painel admin
+	•	IaC com Terraform
+	•	Observabilidade (Grafana/Loki)
+	•	Frontend (React) + Dashboard
 
 ⸻
 
-## 👨‍💻 Autor
+👨‍💻 Autor
 
-**Rafael Rodrigues**
-Desenvolvedor Backend • Cloud & DevOps  
-AmazonTech DevLab (projeto autoral)
+Rafael Rodrigues
+Backend & Cloud Development
 
-GitHub: https://github.com/amazonrootsts
+GitHub: https://github.com/amazonroots
