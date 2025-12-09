@@ -160,6 +160,38 @@ E este aqui é a origem da jornada.
 
 ⸻
 
+📘 Histórico Técnico do Projeto (Diário Real)
+
+Linha do tempo de desenvolvimento, erros & acertos — transparente e profissional.
+
+Data	Evento
+07/12/2025	Projeto finalizado localmente com Docker + PostgreSQL + Auth JWT
+08/12/2025	Deploy completo na AWS EC2 (Ubuntu 24.04 — Free Tier)
+	Configuração de Security Groups (22/8005 liberados)
+	Instalação do Docker + Docker Compose no servidor
+	Subida do container via docker compose up --build -d
+	API disponível publicamente via Elastic IP
+	Testes de produção: /signup, /login, /notes, /admin, /audit
+	Health Check testado via navegador e curl externo
+09/12/2025	Ajuste de acesso externo com Elastic IP novo 100.26.73.245
+	Correção de conexão via SSH (timeout → resolvido com IP atualizado)
+	Teste remoto OK, containers online docker ps validado
+	Atualização do README com prints reais do Swagger em produção
+
+Deploy real — erros aconteceram, foram diagnosticados e corrigidos.
+Não é projeto de tutorial. É campo de batalha.
+
+⸻
+
+☁ Cloud & DevOps — O diferencial desse projeto
+	•	Infra própria, sem Heroku / sem Render — AWS raiz.
+	•	Deploy manual inicial para entender o processo de verdade.
+	•	Uso de Elastic IP, Security Groups e ambiente Linux real.
+	•	Banco com volume persistente (não some ao reiniciar container).
+	•	Pipeline CI/CD será implementado — terreno já preparado.
+
+⸻
+
 👤 Autor
 
 Rafael Rodrigues — AmazonTech
