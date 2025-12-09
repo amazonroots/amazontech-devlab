@@ -82,19 +82,23 @@ cd amazontech-devlab
 docker-compose up --build
 ⸻
 
-☁ Deploy em Cloud AWS
+<details>
+  <summary>☁️ Deploy em Cloud AWS</summary>
 
 Estruturado como produção real — servidor, rede, infraestrutura e acesso global.
 
-Componente	Status
-AWS EC2 (Ubuntu 24.04)	🟢 Online
-Elastic IP (fixo)	🟢 Configurado
-Docker Compose (API + DB)	🟢 Rodando
-PostgreSQL Persistente	🟢 Ativo
-Nginx Reverse Proxy (80)	🟢 Funcionando
-Endpoint Público	🟢 Acessível mundialmente
-SSL + Domínio	🔜 Próxima etapa
-CI/CD GitHub Actions	📌 Planejado
+| Componente                      | Status             |
+|---------------------------------|--------------------|
+| AWS EC2 (Ubuntu 24.04)         | 🟢 Online          |
+| Elastic IP (fixo)              | 🟢 Configurado     |
+| Docker Compose (API + DB)      | 🟢 Rodando         |
+| PostgreSQL Persistente         | 🟢 Ativo           |
+| Nginx Reverse Proxy (80)       | 🟢 Funcionando     |
+| Endpoint Público               | 🟢 Acessível no mundo |
+| SSL + Domínio                  | 🔜 Próxima etapa   |
+| CI/CD GitHub Actions           | 📌 Planejado       |
+
+</details>
 
 
 ⸻
