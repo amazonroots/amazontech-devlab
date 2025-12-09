@@ -1,8 +1,8 @@
 <p align="center">
   <img src="da348e15a643411f3e3d6eb8be4613bff71d1e8cd1398ef2d6527de13467c096.png" width="100%" />
 </p>
-### ☁ AmazonTech DevLab  
-**Backend completo rodando em produção real na AWS EC2 • FastAPI • Docker • PostgreSQL • JWT • Nginx**
+
+### ☁️ AmazonTech DevLab **Backend completo rodando em produção real na AWS EC2 · FastAPI · Docker · PostgreSQL · JWT · Nginx**
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Online-success?style=for-the-badge"/>
