@@ -1,148 +1,168 @@
-
-⚡ AMAZONTECH DEVLAB
-
-Backend Real em Produção — FastAPI • Docker • PostgreSQL • JWT • AWS EC2
+# ⚡ AMAZONTECH DEVLAB
+Backend Real em Produção • FastAPI • Docker • PostgreSQL • JWT • AWS EC2 • Nginx
 
 <p align="center">
   <img src="https://img.shields.io/badge/STATUS-ONLINE-green?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/CLOUD-AWS-orange?style=for-the-badge&logo=amazonaws"/>
-  <img src="https://img.shields.io/badge/API-FastAPI-0affc2?style=for-the-badge&logo=fastapi"/>
-  <img src="https://img.shields.io/badge/DB-PostgreSQL-0277bd?style=for-the-badge&logo=postgresql"/>
-  <img src="https://img.shields.io/badge/CONTAINERS-Docker-099cec?style=for-the-badge&logo=docker"/>
-  <img src="https://img.shields.io/badge/AUTH-JWT-darkviolet?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/API-FastAPI-00ffc8?style=for-the-badge&logo=fastapi"/>
+  <img src="https://img.shields.io/badge/DOCKER-Compose-blue?style=for-the-badge&logo=docker"/>
+  <img src="https://img.shields.io/badge/DATABASE-PostgreSQL-0277bd?style=for-the-badge&logo=postgresql"/>
+  <img src="https://img.shields.io/badge/AUTH-JWT-critical?style=for-the-badge"/>
 </p>
 
+🔗 **API em Produção:** http://100.26.73.245:8005/docs  
+> Não é mock • Não é local • **É produção global 24/7**
 
-🔗 API Live (Swagger): http://100.26.73.245:8005/docs
+---
 
-Não é localhost. É produção real.
+## 🌐 Overview
+Microsserviço backend completo, com autenticação JWT, CRUD Notes, Admin Logs e deploy real na AWS EC2 com banco persistente via Docker Compose.
 
-⸻
+Infra pensada para crescer e escalar.
 
-🌐 Neon Tech Overview
+---
 
-╔══════════════════════════════════════════════════════════════════╗
-║  AMAZONTECH DEVLAB — Backend em Produção com Infraestrutura Real ║
-║  FastAPI • PostgreSQL • JWT • Docker • AWS • Nginx Reverse Proxy ║
-╚══════════════════════════════════════════════════════════════════╝
+## 🧩 Stack
 
-💠 Autenticação JWT
-💠 CRUD Notes
-💠 Admin + Auditoria
-💠 Deploy AWS EC2 24/7
-💠 Docker + Banco persistente
-💠 Proxy Nginx porta 80 + Elastic IP
+| Camada | Tecnologia |
+|---|---|
+| Backend | FastAPI (Python 3.11) |
+| Auth | JWT Token |
+| Banco | PostgreSQL + Volume |
+| Deploy | Docker + Docker Compose |
+| Cloud | AWS EC2 (Elastic IP) |
+| Proxy | Nginx Reverse Proxy |
 
-⸻
+---
 
-✨ Gráfico Visual Estilo Neon (Progresso do Projeto)
+# 🔥 PROGRESSO (estilo neon futurista)
 
-███▓▒░░░   06/12 — 🔥 Base do Backend + CRUD Notes
-████████████████████████████████████████████ 100%
+███▓▒░░░ 06/12 - FastAPI + CRUD Notes criado ……………… 100%
+████████ 07/12 - Autenticação JWT + rotas seguras ………… 100%
+████████ 08/12 - Docker + Postgres persistente …………… 100%
+████████ 08/12 - Deploy AWS EC2 + API live ………………. 100%
+████████ 09/12 - IP fixo + Porta 80 + Proxy ativado ………. 100%
+███▒░░░  Próximo - HTTPS + Domínio ………………………. 35%
+██░░░░░  Futuro - CI/CD + RDS + Observability …………….. 10%
 
-████████████████████████████████████████████ 07/12 — 🔐 JWT Auth + Rotas Privadas
+---
 
-████████████████████████████████████████████ 08/12 — 🐳 Docker + Docker Compose
+## 🕒 Timeline Visual
 
-████████████████████████████████████████████ 08/12 — ☁ Deploy AWS EC2 Global
+┏━━ 06/12 — BACKEND NASCE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FastAPI + CRUD Notes                                          ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-████████████████████████████████████████████ 09/12 — 🌐 Nginx + Porta 80 + ElasticIP
+┏━━ 07/12 — AUTENTICAÇÃO ONLINE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ JWT Auth + /login /register /me                              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-██████████████████▒░░░░░░░░░░░░░░░░░░        Next — HTTPS + Domínio
+┏━━ 08/12 — INFRA COM DOCKER ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Docker Compose + PostgreSQL Persistente                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-██████░░░░░░░░░░░░░                        Future — CI/CD • RDS • Observabilidade
+┏━━ 08/12 — DEPLOY MUNDIAL ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ AWS EC2 + API Global                                         ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
+┏━━ 09/12 — PRODUÇÃO ESTÁVEL ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Nginx + Porta 80 + Elastic IP                                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-⸻
+---
 
-🕒 TIME-LINE ESTÉTICA (INSPIRAÇÃO FUTURISTA)
+## 💻 Como Rodar Local
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  06/12 — FOUNDATION MODE ACTIVATED                          ┃
-┃  FastAPI + CRUD Notes → Backend nasce                       ┃
-┗━━▲━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-   │
-┏━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  07/12 — ACCESS SYSTEM ONLINE                               ┃
-┃  JWT Auth / Login / Register / /me                          ┃
-┗━━▲━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-   │
-┏━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  08/12 — INFRASTRUCTURE BUILD                               ┃
-┃  Docker Compose + PostgreSQL persistente                    ┃
-┗━━▲━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-   │
-┏━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  08/12 — WORLD DEPLOYMENT                                   ┃
-┃  API pública → AWS EC2                                      ┃
-┗━━▲━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-   │
-┏━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  09/12 — STABILITY UPDATE                                   ┃
-┃  Elastic IP + Proxy Nginx + Porta 80                        ┃
-┗━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-       Next → SSL/Domain + CI/CD + Observability
-
-
-⸻
-
-🧠 Tech Stack
-
-Área	Ferramentas
-Backend	FastAPI • Python
-Segurança	JWT Stateless Auth
-Persistência	PostgreSQL
-Infra	Docker + Docker Compose
-Cloud	AWS EC2 (Elastic IP)
-Proxy	Nginx Reverse Proxy
-
-
-⸻
-
-💻 Run Local
-
+```bash
 git clone https://github.com/amazonroots/amazontech-devlab.git
 cd amazontech-devlab
 docker-compose up -d
 
-Docs Local → http://localhost:8005/docs
+Docs: http://localhost:8005/docs
+
+Requisitos: Docker + Docker Compose
 
 ⸻
 
-🛰 Deploy Info
+🛰 Deploy
 
-Serviço	Status
-Produção EC2	🟢 Ativo
-Docker + DB	🟢
-Porta 80 (Nginx)	🟢
+Item	Status
+EC2 Ubuntu 24.04	🟢
+Docker + Compose	🟢
+PostgreSQL Persistente	🟢
+Porta 80 via Nginx	🟢
 IP Fixo	🟢
-SSL/Domain	🔜
+SSL + Domínio	🔜
 
 
 ⸻
 
 🧭 Roadmap
-
-🚧 HTTPS + Domínio
-🚧 CI/CD GitHub Actions
-🚧 Logging + Observabilidade
-🚧 RDS + Escalabilidade
+	•	🔐 HTTPS + Domínio
+	•	🚀 CI/CD GitHub Actions
+	•	📊 Monitoramento e Logs
+	•	🐘 Banco → RDS
+	•	🧱 Escala → ECS/EKS
 
 ⸻
 
-👤 CRIADOR
+👤 Autor
 
-╔════════════════════════════════════════════╗
-║  Rafael Rodrigues — AMAZONTECH             ║
-║  Backend • Cloud • DevOps                  ║
-║  Especializando em:                        ║
-║    • AWS/Cloud Deployment                  ║
-║    • Engenharia Backend                    ║
-║    • DevOps & Containers                   ║
-║                                            ║
-║  📩 Email: rafael.amazontech@gmail.com      ║
-╚════════════════════════════════════════════╝
+Rafael Rodrigues — AmazonTech
+Backend | Cloud | DevOps
+Email: rafael.amazontech@gmail.com
 
-Eu não brinco de deploy. Eu coloco no mundo.
-Infra real > teoria.
+Eu não estudo cloud. Eu subo pra produção.
 
+📌 Commit para subir:
+
+docs: replace README with final neon visual version + timeline + graphics
+
+---
+
+---
+
+# 🟦 **02 — README DO SEU PERFIL (github.com/amazonroots)**  
+> quando abrir o seu perfil vai aparecer isso
+
+```md
+# 🌌 Rafael Rodrigues (AmazonTech)
+Backend Developer • Cloud & DevOps em formação • Construindo infra real desde o início
+
+Bem-vindo ao meu universo de código, cloud e projetos reais.  
+Aqui eu documento minha evolução e publico sistemas que **rodam em produção**, não só no localhost.
+
+---
+
+### 🧠 Skills & Stack
+
+| Área | Tecnologias |
+|---|---|
+| Backend | Python • FastAPI |
+| Cloud | AWS (EC2, SG, EIP) |
+| Deploy | Docker • Compose |
+| Banco | PostgreSQL |
+| Segurança | JWT / Auth Token |
+| Infra | Nginx • Linux Server |
+
+---
+
+## 🚀 Projeto Atual Destaque
+
+### 🔥 AmazonTech DevLab
+Backend em produção usando FastAPI + Docker + PostgreSQL  
+📌 Deploy AWS EC2 • API online
+
+🔗 `https://github.com/amazonroots/amazontech-devlab`
+
+---
+
+### 📫 Contato
+
+**📩 Email:** `rafael.amazontech@gmail.com`  
+*(LinkedIn será adicionado futuramente)*
+
+---
+
+> Aprendizado constante, disciplina diária, código real.  
+> O futuro é construído — commit por commit.
