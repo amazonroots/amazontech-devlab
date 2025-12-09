@@ -1,136 +1,111 @@
 <p align="center">
   <img src="https://img.shields.io/badge/AmazonTech_DevLab-Backend_Cloud-orange?style=for-the-badge&logo=aws"/>
   <img src="https://img.shields.io/badge/FastAPI-Production-009688?style=for-the-badge&logo=fastapi"/>
-  <img src="https://img.shields.io/badge/Docker-Containerized-blue?style=for-the-badge&logo=docker"/>
+  <img src="https://img.shields.io/badge/Docker-Containers-blue?style=for-the-badge&logo=docker"/>
   <img src="https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql"/>
   <img src="https://img.shields.io/badge/Status-Online_Globally-green?style=for-the-badge"/>
 </p>
 
----
-
-<h1 align="center">⚡ AmazonTech DevLab — API Cloud Production</h1>
-<p align="center"><strong>Backend real rodando em produção na AWS EC2</strong> — autenticação JWT, banco PostgreSQL, auditoria, notas e módulo admin. Totalmente em contêiner.</p>
+<h1 align="center">⚡ AmazonTech DevLab — Cloud Backend em Produção</h1>
+<p align="center">API real rodando na AWS EC2 — autenticação JWT, CRUD de notas, auditoria e administração.</p>
 
 ---
 
-### 🚀 Deploy Online (Public Cloud)
-📍 Swagger Docs → **http://100.26.73.245:8005/docs**
-
-Acessa de qualquer lugar.  
-Sem localhost, sem tunelamento — **publicamente disponível**.
+### 🌍 Deploy em Produção
+🔗 **Swagger Docs:** http://100.26.73.245:8005/docs  
+Acessível globalmente — sem localhost, sem VPN.
 
 ---
 
-## 🏗 Stack & Infra
-
-| Layer | Tech |
+## 🧱 Stack
+| Camada | Tecnologia |
 |---|---|
-| Language | **Python** |
-| Framework | **FastAPI** |
-| Auth | **JWT + Roles (admin/user)** |
-| DB | **PostgreSQL** |
-| Infra | **Docker + Docker Compose** |
-| Cloud | **AWS EC2 Ubuntu 24.04 (Free Tier)** |
-| Ports | **8005 → 8000 (API)** / **5432 (DB)** |
-| Monitoring | Logs + Healthcheck externo |
+| Linguagem | Python |
+| Framework | FastAPI |
+| Banco | PostgreSQL |
+| Containers | Docker + Docker Compose |
+| Deploy | AWS EC2 Ubuntu |
+| Auth | JWT (Login/Signup/Protected Routes) |
+| Auditoria | Logging interno |
+| Segurança | SSH Key + Security Groups |
 
 ---
 
-## 🔥 Features implementadas
-
-✔ Registro e Login com JWT  
-✔ Refresh e Bearer Token autenticado  
-✔ CRUD de Notes com usuário logado  
-✔ Sistema **Admin real com permissões**  
-✔ **Auditoria completa de ações**  
-✔ Banco PostgreSQL persistente em container  
-✔ Deploy rodando 24/7 na AWS EC2  
-✔ Testada via celular e acesso externo real  
+## 🔥 Recursos Implementados
+- Registro e Login com geração de token JWT
+- Rotas seguras para usuários autenticados
+- CRUD completo de Notes
+- Painel Admin com permissões elevadas
+- Auditoria de ações
+- Banco persistente em contêiner PostgreSQL
+- Deploy real em EC2 com IP público
+- API online e acessível mundialmente
 
 ---
 
-## 📜 Diário Técnico — Deploy Cloud
+## 📜 Diário Técnico — Deploy 08/12/2025
 
-📅 **08/12/2025 → API em Produção Global**
+EC2 criada — Ubuntu 24.04 | t3.micro (Free Tier)
+Chave SSH configurada: amazontech-key.pem
 
-### 1. EC2 Provisionada
-- Ubuntu 24.04 | t3.micro Free Tier  
-- Security Group liberado: **22 SSH / 8005 API**
-- Acesso via Key `.pem`
-
-```bash
-ssh -i ~/.ssh/amazontech-key.pem ubuntu@100.26.73.245
-
-2. Setup Ambiente
+Instalação
 
 sudo apt update && sudo apt upgrade -y
 sudo apt install docker.io docker-compose -y
 
-3. Build & Run
+Deploy
 
-git clone <repo>
+git clone 
 cd amazontech-devlab
-sudo docker compose up --build -d
+sudo docker compose up –build -d
 
-4. Containers Online
+Serviços UP
 
-sudo docker ps
+API: 8005 -> 8000 internal
+Postgres: 5432
 
-Serviço	Porta	Status
-API	8005 → 8000 interno	✔ UP
-PostgreSQL	5432	✔ UP
+Testado:
+✔ /signup
+✔ /login → JWT OK
+✔ /notes CRUD
+✔ /admin + /audit protegido
+✔ healthcheck via curl externo
 
-5. Testes
+---
 
-Endpoint	Status
-/signup	✔
-/login	✔ Token OK
-/me	✔ Autenticado
-/notes	✔ CRUD OK
-/admin & /audit	✔ apenas admin
+## 📊 Status Atual
+| Módulo | Estado |
+|---|---|
+| Backend | ✔ Online |
+| Auth JWT | ✔ |
+| Notes CRUD | ✔ |
+| Admin | ✔ |
+| Auditoria | ✔ |
+| Deploy AWS | ✔ Público |
+| Bugs | 0 críticos |
 
+---
 
-⸻
+## 🧭 Roadmap Futuro
+- Domínio + HTTPS (Nginx + Certbot)
+- Backup & Rotinas automáticas
+- CI/CD com GitHub Actions
+- Observabilidade (Grafana/Loki)
+- Migração futura para RDS
+- Dashboard Web (frontend React)
 
-📍 Status atual
+---
 
-Módulo	Situação
-Backend API	Online
-JWT Auth	OK
-Notes CRUD	OK
-Auditoria	OK
-Admin	OK
-Deploy AWS	Ativo
-Bugs	Nenhum crítico
+## 🧩 Arquitetura Simplificada
 
-Não é demo — é produto real em produção.
+Mac → SSH → EC2 → Docker → FastAPI → PostgreSQL
+│
+└── Internet (porta 8005 pública)
 
-⸻
+---
 
-🧭 Roadmap Evolução
+## 👨‍💻 Autor
+**Rafael Rodrigues**  
+📩 rafael.amazontech@gmail.com  
 
-🔹 Domínio + DNS
-🔹 HTTPS com Certbot + NGINX
-🔹 CI/CD GitHub Actions
-🔹 Monitoramento com Grafana / Loki
-🔹 Migração para RDS
-🔹 Dashboard Web (React)
-
-⸻
-
-🖥 Arquitetura Simplificada
-
-Local Dev → GitHub → SSH → AWS EC2 → Docker → FastAPI → PostgreSQL
-                               │
-                               └── Public Internet (8005)
-
-
-⸻
-
-👤 Autor
-
-Rafael Rodrigues
-📧 rafael.amazontech@gmail.com
-
-Cloud & Backend Developer em construção.
-Criador do AmazonTech DevLab — API real rodando na nuvem.
+Criador do AmazonTech DevLab — estudo ADS & Cloud, desenvolvendo soluções backend reais com deploy na AWS.
