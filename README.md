@@ -1,9 +1,10 @@
+
 <p align="center">
   <img src="da348e15a643411f3e3d6eb8be4613bff71d1e8cd1398ef2d6527de13467c096.png" width="100%"/>
 </p>
 
 <h1 align="center">☁️ AmazonTech DevLab</h1>
-<h3 align="center">Backend completo rodando em produção real na AWS · FastAPI · Docker · PostgreSQL · JWT · Nginx</h3>
+<h3 align="center">Backend rodando em produção real na AWS · FastAPI · Docker · PostgreSQL · JWT · Nginx</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Online-success?style=for-the-badge"/>
@@ -16,75 +17,50 @@
 
 ---
 
-🔗 **Swagger público (API em produção):**  
+### 🔗 API em Produção  
 📍 http://100.26.73.245:8005/docs  
-
-> **Sem localhost. Sem simulação. É produção real 24/7 rodando na AWS.**
+> Acessível globalmente — sem localhost
 
 ---
 
-### 📷 Interface pública – Swagger API (prints reais do ambiente de produção)
+## 📷 Swagger em Produção
 
 <p align="center">
-  <img src="Imagem 09-12-2025 às 02.18.png" width="100%" alt="Swagger AmazonTech DevLab" />
+  <img src="Imagem 09-12-2025 às 02.18.png" width="100%" alt="Swagger AmazonTech DevLab"/>
 </p>
 
-> Painel oficial do **AmazonTech DevLab API**, disponível mundialmente.  
-Permite testar **login, signup, notas, auditoria e endpoints administrativos** direto do navegador.
-
 ---
 
-## 🧭 O que é o AmazonTech DevLab?
+## 🧭 Sobre o Projeto
 
-Um laboratório de **Cloud + Backend + DevOps** projetado com um objetivo direto:
+O **AmazonTech DevLab** é meu laboratório real de **Cloud + Backend + DevOps**, criado para aprender **infraestrutura fazendo — não só lendo.**  
+Aqui construí a jornada completa:
 
-> **Aprender infraestrutura e produção de verdade, construindo algo que vai para o ar — e não só para o notebook.**
+**Código → Containers → Banco persistente → Deploy na AWS → Proxy → API disponível no mundo todo.**
 
-Aqui eu construí tudo do zero:  
-Backend → Contêinerização → Banco persistente → Rede → Deploy → Proxy → Acesso global.
-
-É meu **case inicial de produção**, fundação do meu ecossistema AmazonTech.
-
----
-
-## 🎯 Por que esse projeto existe?
-
-✔ Criar experiência real em Cloud — não só teoria  
-✔ Subir aplicação completa com infraestrutura própria  
-✔ Aprender segurança, logs, proxy, rede e automação  
-✔ Construir base para o projeto maior **Sentinel-21**  
-✔ Ter um projeto forte no portfólio para o mercado
-
-> **Sem copiar — construído com cabeça, erro, correção e sangue no teclado.**
+É meu **case oficial para portfólio cloud** e o primeiro alicerce para projetos maiores como **Sentinel-21**.
 
 ---
 
 ## ⚙ Stack Técnica
 
-| Camada | Ferramentas |
+| Item | Tecnologia |
 |---|---|
 | Linguagem | Python 3.11 |
 | Framework | FastAPI |
-| Banco | PostgreSQL com volume persistente |
-| Containers | Docker + Docker Compose |
-| Cloud | AWS EC2 (Ubuntu 24.04) |
-| Rede | Security Groups + Elastic IP |
-| Proxy | Nginx Reverse (porta 80) |
-| Auth | JWT Tokens |
-| Deploy | Produção global |
+| DB | PostgreSQL (persistente via Docker Volume) |
+| Infra | Docker + Docker Compose |
+| Cloud | AWS EC2 Linux |
+| Rede | Elastic IP + Security Groups |
+| Proxy | Nginx reverse (porta 80 → 8005) |
+| Auth | JWT Token |
+| Deploy | Produção real na AWS |
 
 ---
 
-## 🛠 Rodando localmente
+## 🛠 Rodando Local
 
-### 📦 Requisitos
-- Docker
-- Docker Compose
-- Python 3.10+ (opcional — se quiser rodar sem Docker)
-
-### 🚀 Executar com Docker (recomendado)
-
-
+```bash
 git clone https://github.com/amazonroots/amazontech-devlab.git
 cd amazontech-devlab
 docker-compose up --build
@@ -92,111 +68,40 @@ docker-compose up --build
 
 ⸻
 
+📊 Histórico Técnico (Diário real)
 
-<details>
-<summary><strong>☁️ Deploy em Cloud AWS — clique para expandir</strong></summary>
+Data	Evento
+07/12/2025	Backend funcional local + JWT + CRUD Notes + Docker + PostgreSQL
+08/12/2025	Deploy AWS EC2 • Security Group • Docker Compose • API Pública • Testes
+09/12/2025	Elastic IP atualizado • Correção SSH timeout • docker ps validado • README atualizado com prints
 
-
-Configuração em produção real — com infraestrutura, persistência e acesso externo.
-
-Componente
-Status
-AWS EC2 (Ubuntu 24.04)
-🟢 Online
-Elastic IP Fixo
-🟢 Configurado
-Docker Compose (API + DB)
-🟢 Rodando
-PostgreSQL Persistente
-🟢 Ativo
-Nginx Reverse Proxy (80)
-🟢 Funcionando
-Endpoint Público
-🟢 Acessível globalmente
-SSL + Domínio
-🔜 Próxima etapa
-CI/CD GitHub Actions
-📌 Planejado
-
-
-
-</details>
-
-
-
-⸻
-
-📊 Evolução do projeto
-
-[██████████████] Backend + CRUD Notes
-[██████████████] JWT Auth
-[██████████████] Docker + Volume PG
-[██████████████] Deploy AWS EC2
-[██████████████] Nginx Proxy porta 80
-[██████░░░░░░░░] Domínio + HTTPS
-[██░░░░░░░░░░░░] CI/CD + Observabilidade
-
+Nada de teoria — deploy real, com erros, correção e aprendizado prático.
 
 ⸻
 
 🗺 Roadmap
-	•	Domínio próprio + HTTPS (Certbot)
-	•	CI/CD com GitHub Actions
-	•	Logs e monitoramento (Grafana/Prometheus/Loki)
-	•	Banco migrado para Amazon RDS
-	•	Escalonamento com ECS/EKS
-	•	Documentação arquitetural completa
+	•	Domínio + HTTPS (Certbot)
+	•	CI/CD (GitHub Actions)
+	•	Observabilidade (Prometheus/Grafana/Loki)
+	•	Migração para RDS
+	•	Escalonamento ECS/EKS
 
 ⸻
 
-🌌 Visão de futuro
+🔥 Por que isso é valioso no meu portfólio?
 
-Este é o primeiro passo do meu ciclo DevOps/Cloud.
-O próximo será Sentinel-21 — Firewall Cognitivo para IA.
-Depois: microserviços, filas, monitoramento, automação e alta disponibilidade.
+✔ Cloud real (AWS EC2)
+✔ Deploy completo feito à mão
+✔ Banco persistente, nada de “localzinho”
+✔ API pública que QUALQUER UM pode acessar
+✔ Base perfeita para CI/CD + escalabilidade
 
-Cada repositório será uma peça desse universo.
-E este aqui é a origem da jornada.
-
-⸻
-
-📘 Histórico Técnico do Projeto (Diário Real)
-
-Linha do tempo de desenvolvimento, erros & acertos — transparente e profissional.
-
-Data	Evento
-07/12/2025	Projeto finalizado localmente com Docker + PostgreSQL + Auth JWT
-08/12/2025	Deploy completo na AWS EC2 (Ubuntu 24.04 — Free Tier)
-	Configuração de Security Groups (22/8005 liberados)
-	Instalação do Docker + Docker Compose no servidor
-	Subida do container via docker compose up --build -d
-	API disponível publicamente via Elastic IP
-	Testes de produção: /signup, /login, /notes, /admin, /audit
-	Health Check testado via navegador e curl externo
-09/12/2025	Ajuste de acesso externo com Elastic IP novo 100.26.73.245
-	Correção de conexão via SSH (timeout → resolvido com IP atualizado)
-	Teste remoto OK, containers online docker ps validado
-	Atualização do README com prints reais do Swagger em produção
-
-Deploy real — erros aconteceram, foram diagnosticados e corrigidos.
-Não é projeto de tutorial. É campo de batalha.
-
-⸻
-
-☁ Cloud & DevOps — O diferencial desse projeto
-	•	Infra própria, sem Heroku / sem Render — AWS raiz.
-	•	Deploy manual inicial para entender o processo de verdade.
-	•	Uso de Elastic IP, Security Groups e ambiente Linux real.
-	•	Banco com volume persistente (não some ao reiniciar container).
-	•	Pipeline CI/CD será implementado — terreno já preparado.
+Cloud não se aprende lendo. Se aprende deployando.
 
 ⸻
 
 👤 Autor
 
 Rafael Rodrigues — AmazonTech
-Backend • Cloud • DevOps
 📩 rafael.amazontech@gmail.com
-
-Não fiz para testar. Fiz para colocar no ar.
-Cloud não se aprende lendo — se aprende deployando.
+Backend | Cloud | DevOps
