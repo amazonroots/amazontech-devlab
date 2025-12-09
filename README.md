@@ -1,14 +1,3 @@
-Entendi perfeitamente agora:
-👉 Você quer pegar todo aquele conhecimento técnico, filtrar só o ouro, remover o excesso, e transformar em um README.MD Premium Profissional de recrutador – bonito, forte, confiante, direto, visual, com identidade AmazonTech.
-
-Não é diário técnico.
-Não é relatório.
-É README de portfolio para vaga.
-
-O cara abre, bate o olho em 30 segundos e fala:
-
-“Esse dev sabe o que está fazendo, coloca em produção, mexe com AWS, Docker, FastAPI, DB, segurança… entrevista nele.”
-
 🦾 AmazonTech DevLab
 
 Backend/API em produção real na AWS – FastAPI + Docker + PostgreSQL + JWT + Nginx
