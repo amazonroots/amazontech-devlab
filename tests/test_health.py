@@ -1,3 +1,11 @@
+import os
+import sys
+
+# Garante que o pytest enxergue o main.py na raiz do projeto
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
 from fastapi.testclient import TestClient
 from main import app
 
@@ -29,7 +37,7 @@ def test_dbstatus_structure():
     Ele só garante que a rota responda com JSON no formato esperado.
 
     Se o banco estiver fora do ar, a própria rota retorna:
-      {"db": "error", "detail": "..."}
+        {"db": "error", "detail": "..."}
     e o teste continua passando.
     """
     response = client.get("/dbstatus")

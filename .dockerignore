@@ -1,51 +1,7 @@
-# ============================================
-# AmazonTech DevLab - Docker Ignore
-# Mantém a imagem Docker leve e sem arquivos locais
-# ============================================
-
-# ───────────────────────────────
-# Ambientes virtuais
-# ───────────────────────────────
-.venv/
-venv/
-env/
-
-# ───────────────────────────────
-# Caches & Compilados Python
-# ───────────────────────────────
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.pytest_cache/
-
-# ───────────────────────────────
-# Configs locais & IDE
-# ───────────────────────────────
-.vscode/
-.idea/
-.DS_Store
-
-# ───────────────────────────────
-# Logs & histórico local
-# ───────────────────────────────
-logs/
-*.log
-
-# ───────────────────────────────
-# Arquivos que NÃO vão pra imagem Docker
-# ───────────────────────────────
-.env                # Segurança — credenciais permanecem fora do container
-
-# ───────────────────────────────
-# Git & versionamento
-# ───────────────────────────────
+.env
 .git
-.gitignore          # Não precisa entrar na imagem final
+.gitignore
 
-# ───────────────────────────────
-# Backups e temporários
-# ───────────────────────────────
 *.bak
 *.swp
 *.tmp
