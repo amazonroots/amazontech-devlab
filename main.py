@@ -10,13 +10,13 @@ from db import Base, engine, get_db
 from auth import router as auth_router
 from notes import router as notes_router
 from audit_routes import router as audit_router
-from admin_routes import router as admin_router  # rotas admin
-# NENHUM IMPORT DE AI AQUI.
+from admin_routes import router as admin_router
+# IMPORTANTE: nenhuma rota de AI aqui.
 # from ai_routes import router as ai_router
 
 
 # ---------------------------
-# LOGGING BÁSICO PADRONIZADO
+# LOGGING BÁSICO
 # ---------------------------
 
 logging.basicConfig(
@@ -28,7 +28,7 @@ logger = logging.getLogger("amazontech-devlab")
 
 
 # ---------------------------
-# APP FASTAPI
+# APP FASTAPI (TEMA DARK / NEON)
 # ---------------------------
 
 app = FastAPI(
@@ -37,6 +37,16 @@ app = FastAPI(
     description=(
         "Backend oficial do AmazonTech DevLab: autenticação, notas, auditoria e módulo administrativo."
     ),
+    swagger_ui_parameters={
+        # tema de highlight escuro (preto/neon)
+        "syntaxHighlight": {"theme": "obsidian"},
+        # começa tudo recolhido
+        "docExpansion": "none",
+        # mostra tempo de resposta em cada request
+        "displayRequestDuration": True,
+        # esconde a árvore gigante de modelos por padrão
+        "defaultModelsExpandDepth": -1,
+    },
 )
 
 
@@ -66,7 +76,9 @@ async def log_requests(request: Request, call_next):
     """
     logger.info(f"REQUEST {request.method} {request.url.path}")
     response = await call_next(request)
-    logger.info(f"RESPONSE {request.method} {request.url.path} -> {response.status_code}")
+    logger.info(
+        f"RESPONSE {request.method} {request.url.path} -> {response.status_code}"
+    )
     return response
 
 
@@ -86,7 +98,7 @@ def on_startup() -> None:
 
 
 # ---------------------------
-# ROTAS PRINCIPAIS
+# REGISTRO DE ROTAS PRINCIPAIS
 # ---------------------------
 
 # Autenticação: /signup, /login, /me
@@ -101,7 +113,7 @@ app.include_router(audit_router)
 # Admin: /admin/users, /admin/promote/{user_id}, etc.
 app.include_router(admin_router)
 
-# NENHUMA ROTA DE AI SAFETY REGISTRADA AQUI.
+# Nenhuma rota de AI registrada.
 # app.include_router(ai_router)
 
 
@@ -109,10 +121,11 @@ app.include_router(admin_router)
 # LIMPEZA FORÇADA DE ROTAS /ai*
 # ---------------------------
 
-def remove_ai_routes():
+def remove_ai_routes() -> None:
     """
     Remove qualquer rota que comece com /ai do app,
     mesmo que tenha sido registrada em outro lugar.
+    Só por garantia.
     """
     original_routes = list(app.router.routes)
     new_routes = []
